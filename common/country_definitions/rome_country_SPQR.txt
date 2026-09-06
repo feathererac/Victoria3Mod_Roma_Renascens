@@ -6,7 +6,7 @@
 # ============================================================
 
 SPQR = {
-	color = { 102 2 60 }
+	color = { 150 4 0 }
 	country_type = recognized
 	tier = empire
 	cultures = { roman greek }
