@@ -1,0 +1,45 @@
+﻿namespace = rome
+
+# ============================================================
+# 罗马帝国重建MOD - 事件（必须位于根目录 events/ 下才会被游戏加载）
+# ============================================================
+
+### 事件：拥有全部奥斯曼罗马领土后，重建东罗马帝国 ###
+rome.1 = {
+	type = country_event
+
+	title = rome.1.t
+	desc = rome.1.desc
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	duration = 3
+
+	# 由 on_action (rome_ottoman_check) 触发
+	trigger = {}
+
+	# 只有一个选项：彻底重建罗马帝国
+	option = {
+		name = rome.1.a
+
+		# 移除希腊觉醒的每周收入buff（收入持续到重建东罗马为止；不存在则跳过）
+		if = {
+			limit = { has_modifier = rome_greek_treasury_boost }
+			remove_modifier = rome_greek_treasury_boost
+		}
+
+		# 获得整个罗马帝国所有领土的宣称
+		rome_add_all_claims = yes
+
+		# 标记东罗马已重建，防止事件重复触发
+		set_variable = { name = rome_eastern_rome_rebuilt }
+
+		# 注：「纪律严明的职业军队」由每月脉冲在成为拜占庭后直接授予（见 rome_pro_army_check）
+	}
+}

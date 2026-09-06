@@ -1,0 +1,378 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 国家议程按钮
+# ============================================================
+
+### 宣布重建罗马：最终议程（拜占庭 -> SPQR） ###
+je_rome_declare_imperium_button = {
+	name = "je_rome_declare_imperium_button"
+	desc = "je_rome_declare_imperium_button_desc"
+
+	visible = {
+			rome_can_declare_imperium = yes
+		}
+		possible = {
+			always = yes
+		}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_declare_imperium_romanum = yes
+	}
+}
+
+### 罗马火种：点燃火种，获得十年军事加成与奥斯曼故土宣称（一次性） ###
+je_rome_roman_spark_button = {
+	name = "je_rome_roman_spark_button"
+	desc = "je_rome_roman_spark_button_desc"
+
+	visible = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+		}
+		has_journal_entry = je_greek_nationalism
+		NOT = { has_variable = rome_roman_spark_taken }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		# 罗马火种军事修正（攻防+30/杀伤+30%/士气打击+30%），持续10年
+		add_modifier = {
+			name = rome_roman_spark
+			months = 120
+		}
+		# 奥斯曼地区所有故土的宣称
+		rome_add_ottoman_claims = yes
+		# 标记已点燃，按钮与议程消失
+		set_variable = { name = rome_roman_spark_taken }
+	}
+}
+
+### 稳固行省：整合未整合的罗马领土 ###
+je_rome_integrate_button = {
+	name = "je_rome_integrate_button"
+	desc = "je_rome_integrate_button_desc"
+
+	visible = {
+		rome_has_unincorporated = yes
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_integrate_roman_states = yes
+		rome_eliminate_radicals = yes
+		add_loyalists = { value = 1000000 strata = lower }
+		add_loyalists = { value = 1000000 strata = middle }
+		add_loyalists = { value = 1000000 strata = upper }
+		add_modifier = { name = rome_pax_romana months = 12 }
+	}
+}
+
+### 稳固行省：最终整合 - 全部罗马领土已整合 ###
+je_rome_final_integration_button = {
+	name = "je_rome_final_integration_button"
+	desc = "je_rome_final_integration_button_desc"
+
+	visible = {
+		rome_all_held = yes
+		NOT = { rome_has_unincorporated = yes }
+		NOT = { has_variable = rome_secure_provinces_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		add_modifier = { name = rome_eternal_city }
+		set_variable = { name = rome_secure_provinces_complete }
+	}
+}
+
+### 奥古斯都：宣称意大利（第一步） ###
+je_rome_augustus_italy_button = {
+	name = "je_rome_augustus_italy_button"
+	desc = "je_rome_augustus_italy_button_desc"
+
+	visible = {
+		NOT = { has_variable = rome_augustus_italy_claimed }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_add_italia_claims = yes
+		set_variable = { name = rome_augustus_italy_claimed }
+		rome_update_rebuilding_modifier = yes
+	}
+}
+
+### 奥古斯都：宣称伊比利亚（需先征服意大利；点击后「重建中的罗马」获得贸易加成） ###
+je_rome_augustus_hispania_button = {
+	name = "je_rome_augustus_hispania_button"
+	desc = "je_rome_augustus_hispania_button_desc"
+
+	visible = {
+		has_variable = rome_augustus_italy_claimed
+		rome_italia_held = yes
+		NOT = { has_variable = rome_augustus_hispania_claimed }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_add_hispania_claims = yes
+		set_variable = { name = rome_augustus_hispania_claimed }
+		rome_update_rebuilding_modifier = yes
+	}
+}
+
+### 奥古斯都：宣称多瑙河地区（需先征服伊比利亚；点击后「重建中的罗马」获得攻/防加成） ###
+je_rome_augustus_danube_button = {
+	name = "je_rome_augustus_danube_button"
+	desc = "je_rome_augustus_danube_button_desc"
+
+	visible = {
+		has_variable = rome_augustus_hispania_claimed
+		rome_hispania_held = yes
+		NOT = { has_variable = rome_augustus_danube_claimed }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_add_danube_claims = yes
+		set_variable = { name = rome_augustus_danube_claimed }
+		rome_update_rebuilding_modifier = yes
+	}
+}
+
+### 奥古斯都：宣称高卢（需先征服多瑙河；点击后「重建中的罗马」获得击杀/士气加成） ###
+je_rome_augustus_gallia_button = {
+	name = "je_rome_augustus_gallia_button"
+	desc = "je_rome_augustus_gallia_button_desc"
+
+	visible = {
+		has_variable = rome_augustus_danube_claimed
+		rome_danube_held = yes
+		NOT = { has_variable = rome_augustus_gallia_claimed }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_add_gallia_claims = yes
+		set_variable = { name = rome_augustus_gallia_claimed }
+		rome_update_rebuilding_modifier = yes
+	}
+}
+
+### 奥古斯都：宣称不列颠（需先征服高卢；点击后额外获得「条条大路通罗马」） ###
+je_rome_augustus_britannia_button = {
+	name = "je_rome_augustus_britannia_button"
+	desc = "je_rome_augustus_britannia_button_desc"
+
+	visible = {
+		has_variable = rome_augustus_gallia_claimed
+		rome_gallia_held = yes
+		NOT = { has_variable = rome_augustus_britannia_claimed }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		rome_add_britannia_claims = yes
+		set_variable = { name = rome_augustus_britannia_claimed }
+		rome_update_rebuilding_modifier = yes
+	}
+}
+
+### 奥古斯都：最终奖励 - 所有地区已宣称并征服 ###
+je_rome_augustus_final_button = {
+	name = "je_rome_augustus_final_button"
+	desc = "je_rome_augustus_final_button_desc"
+
+	visible = {
+		has_variable = rome_augustus_britannia_claimed
+		rome_britannia_held = yes
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		add_modifier = { name = rome_augustus }
+		set_variable = { name = rome_augustus_complete }
+	}
+}
+
+### 奥古斯都（额外）：吞并阿拉伯半岛 - 须为罗马且达到列强国际地位，可直接吞并 ###
+je_rome_arabia_annex_button = {
+	name = "je_rome_arabia_annex_button"
+	desc = "je_rome_arabia_annex_button_desc"
+
+	visible = {
+		c:SPQR ?= this
+		country_rank >= rank_value:great_power
+		NOT = { has_variable = rome_arabia_annexed }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		s:STATE_HEDJAZ = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_NEJD = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_HAIL = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_OMAN = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_ABU_DHABI = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_YEMEN = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		set_variable = { name = rome_arabia_annexed }
+	}
+}
+
+### 元老院：恢复罗马混合共和制（所有非边缘IG支持度>=0时解锁） ###
+je_rome_senate_button = {
+	name = "je_rome_senate_button"
+	desc = "je_rome_senate_button_desc"
+
+	visible = {
+		rome_all_igs_supportive = yes
+		NOT = { has_law = law_type:law_roman_mixed_republic }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		activate_law = law_type:law_roman_mixed_republic
+	}
+}
+
+### 元老院：实施罗马三级权力分配（选举制度） ###
+je_rome_senate_three_tier_button = {
+	name = "je_rome_senate_three_tier_button"
+	desc = "je_rome_senate_three_tier_button_desc"
+
+	visible = {
+		NOT = { has_law = law_type:law_byzantine_three_tier }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		activate_law = law_type:law_byzantine_three_tier
+	}
+}
+
+### 元老院：实施万民法（公民权法律） ###
+je_rome_senate_jus_gentium_button = {
+	name = "je_rome_senate_jus_gentium_button"
+	desc = "je_rome_senate_jus_gentium_button_desc"
+
+	visible = {
+		NOT = { has_law = law_type:law_jus_gentium }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		activate_law = law_type:law_jus_gentium
+	}
+}
+
+### 希腊觉醒：安抚民心增加效忠派（研究buff期间可用） ###
+je_rome_greek_awakening_loyalists_button = {
+	name = "je_rome_greek_awakening_loyalists_button"
+	desc = "je_rome_greek_awakening_loyalists_button_desc"
+
+	visible = {
+		has_modifier = rome_innovation_boost
+	}
+
+	possible = {
+	}
+
+	cooldown = { days = 360 }
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		add_loyalists = { value = 500000 strata = lower }
+		add_loyalists = { value = 500000 strata = middle }
+		add_loyalists = { value = 500000 strata = upper }
+	}
+}

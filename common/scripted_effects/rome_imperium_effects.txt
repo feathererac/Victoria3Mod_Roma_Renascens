@@ -1,0 +1,133 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 宣布重建罗马 - 脚本效果
+# ============================================================
+
+### 「宣布重建罗马」核心效果：切换国家tag/文化/宗教/IG理念 + 授予修正
+rome_declare_imperium_romanum = {
+	# ---- 1. 稳定度：消除激进派，大幅增加效忠派 ----
+	add_radicals = { value = -1000000 strata = lower }
+	add_radicals = { value = -1000000 strata = middle }
+	add_radicals = { value = -1000000 strata = upper }
+
+	add_loyalists = { value = 2000000 strata = lower }
+	add_loyalists = { value = 2000000 strata = middle }
+	add_loyalists = { value = 2000000 strata = upper }
+
+	# ---- 2. 主流文化罗马化：加入罗马文化，移除希腊主流 ----
+	add_primary_culture = cu:roman
+	remove_primary_culture = cu:greek
+
+	# ---- 3. 罗马化变量（供 rome_should_use_roman_ideologies 使用）----
+	set_variable = { name = rome_augustus_roman_redeclared }
+
+	# ---- 4. 立即为四大利益集团挂载罗马化理念 ----
+	ig:ig_armed_forces ?= { add_ideology = ideology_rome_legions }
+	ig:ig_landowners ?= { add_ideology = ideology_rome_senatorial }
+	ig:ig_devout ?= { add_ideology = ideology_rome_pontifices }
+	ig:ig_industrialists ?= { add_ideology = ideology_rome_equestrian }
+
+	# ---- 4b. 重建罗马后：其余利益集团也罗马化 ----
+	ig:ig_intelligentsia ?= { add_ideology = ideology_rome_academia }
+	ig:ig_trade_unions ?= { add_ideology = ideology_rome_collegia }
+	ig:ig_rural_folk ?= { add_ideology = ideology_rome_plebs_rustica }
+	ig:ig_petty_bourgeoisie ?= { add_ideology = ideology_rome_plebs_urbana }
+
+	# ---- 5. 合并希腊金库与宁静的凯旋，授予「重建中的罗马」基础修正（全部疆域到手后才升级为永恒罗马）----
+	if = { limit = { has_modifier = rome_greek_treasury_boost } remove_modifier = rome_greek_treasury_boost }
+	if = { limit = { has_modifier = rome_tranquil_triumph }     remove_modifier = rome_tranquil_triumph }
+	add_modifier = { name = rome_rebuilding }
+
+	# ---- 6. 文化转化：约30%人口转为罗马文化 ----
+	every_scope_pop = {
+		change_pop_culture = { target = cu:roman value = 0.3 }
+	}
+
+	# ---- 7. 宗教转化：约40%人口转为罗马多神教 ----
+	every_scope_pop = {
+		change_pop_religion = { target = rel:religio_romana value = 0.4 }
+	}
+
+	# ---- 8. 国教切换：确立罗马多神教为国教（set_state_religion为国家范围效果）----
+	set_state_religion = rel:religio_romana
+	ruler ?= { change_character_religion = rel:religio_romana }
+
+	# ---- 9. 切换国家tag为SPQR（国旗/地图色立即生效）----
+	# 注意：c:ROM 是罗马尼亚，我们使用自定义的 SPQR 标签
+	change_tag = SPQR
+
+	# ---- 9b. 立即应用SPQR专属罗马化利益集团名称 ----
+	ig:ig_armed_forces ?= { set_interest_group_name = ig_armed_forces_spqr }
+	ig:ig_landowners ?= { set_interest_group_name = ig_landowners_spqr }
+	ig:ig_devout ?= { set_interest_group_name = ig_devout_spqr }
+	ig:ig_industrialists ?= { set_interest_group_name = ig_industrialists_spqr }
+	ig:ig_intelligentsia ?= { set_interest_group_name = ig_intelligentsia_spqr }
+	ig:ig_trade_unions ?= { set_interest_group_name = ig_trade_unions_spqr }
+	ig:ig_rural_folk ?= { set_interest_group_name = ig_rural_folk_spqr }
+	ig:ig_petty_bourgeoisie ?= { set_interest_group_name = ig_petty_bourgeoisie_spqr }
+
+	# ---- 10. 标记完成（防止按钮重复出现）----
+	set_variable = { name = rome_roman_redeclared_complete }
+
+	# ---- 11. 根据已宣称到的地区，立即把「重建中的罗马」同步到正确等级 ----
+	rome_update_rebuilding_modifier = yes
+}
+
+### 安全移除「重建中的罗马」各等级与「条条大路通罗马」：
+### remove_modifier 作用于不存在的修正会刷错误日志，因此每个都先用 has_modifier 守卫。
+rome_remove_all_rebuilding_modifiers = {
+	if = { limit = { has_modifier = rome_rebuilding }     remove_modifier = rome_rebuilding }
+	if = { limit = { has_modifier = rome_rebuilding_2 }   remove_modifier = rome_rebuilding_2 }
+	if = { limit = { has_modifier = rome_rebuilding_3 }   remove_modifier = rome_rebuilding_3 }
+	if = { limit = { has_modifier = rome_rebuilding_4 }   remove_modifier = rome_rebuilding_4 }
+	if = { limit = { has_modifier = rome_viae_romanae }   remove_modifier = rome_viae_romanae }
+}
+
+### 「重建中的罗马」等级同步效果（幂等）：
+### 根据奥古斯都链已点击到的地区，把修正升级到对应等级；点击不列颠后额外获得「条条大路通罗马」。
+### 已获得永恒罗马后不再变动。在每个奥古斯都按钮点击时 + 每月脉冲中调用。
+rome_update_rebuilding_modifier = {
+	if = {
+		limit = {
+			has_variable = rome_roman_redeclared_complete
+			NOT = { has_modifier = rome_imperium_aeternum }
+		}
+		# 第四级：已点击高卢（含击杀/士气加成）
+		if = {
+			limit = { has_variable = rome_augustus_gallia_claimed }
+			rome_remove_all_rebuilding_modifiers = yes
+			add_modifier = { name = rome_rebuilding_4 }
+		}
+		else = {
+			# 第三级：已点击多瑙河（含攻防加成）
+			if = {
+				limit = { has_variable = rome_augustus_danube_claimed }
+				rome_remove_all_rebuilding_modifiers = yes
+				add_modifier = { name = rome_rebuilding_3 }
+			}
+			else = {
+				# 第二级：已点击伊比利亚（含贸易加成）
+				if = {
+					limit = { has_variable = rome_augustus_hispania_claimed }
+					rome_remove_all_rebuilding_modifiers = yes
+					add_modifier = { name = rome_rebuilding_2 }
+				}
+				else = {
+					# 基础级
+					if = {
+						limit = { NOT = { has_modifier = rome_rebuilding } }
+						rome_remove_all_rebuilding_modifiers = yes
+						add_modifier = { name = rome_rebuilding }
+					}
+				}
+			}
+		}
+		# 点击不列颠（征服不列颠）后额外获得「条条大路通罗马」
+		if = {
+			limit = {
+				has_variable = rome_augustus_britannia_claimed
+				NOT = { has_modifier = rome_viae_romanae }
+			}
+			add_modifier = { name = rome_viae_romanae }
+		}
+	}
+}

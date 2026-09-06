@@ -1,0 +1,95 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 事件触发
+# ============================================================
+
+# 每月脉冲：检测希腊是否已拥有全部奥斯曼地区罗马领土 + 挂载罗马化IG理念 + SPQR罗马化IG名称
+on_monthly_pulse_country = {
+	on_actions = {
+		rome_ottoman_check
+		rome_ig_ideology_check
+		rome_ig_rename_check
+		rome_rebuilding_check
+		rome_pro_army_check
+	}
+}
+
+# 每月脉冲：同步「重建中的罗马」修正等级（幂等，兼容旧存档/任何宣称顺序）
+rome_rebuilding_check = {
+	effect = {
+		rome_update_rebuilding_modifier = yes
+	}
+}
+
+# 每月脉冲：一旦成为拜占庭（东罗马重建），即授予「纪律严明的职业军队」，替换十年期的罗马火种
+rome_pro_army_check = {
+	trigger = {
+		c:BYZ ?= this
+		NOT = { has_modifier = rome_professional_army }
+	}
+	effect = {
+		if = {
+			limit = { has_modifier = rome_roman_spark }
+			remove_modifier = rome_roman_spark
+		}
+		add_modifier = { name = rome_professional_army }
+	}
+}
+
+# 检测：拜占庭拥有东色雷斯，且尚未重建东罗马
+rome_ottoman_check = {
+	trigger = {
+		c:BYZ ?= this
+		NOT = { has_variable = rome_eastern_rome_rebuilt }
+		owns_entire_state_region = s:STATE_EASTERN_THRACE
+	}
+	effect = {
+		trigger_event = { id = rome.1 }
+	}
+}
+
+# 每月脉冲：SPQR 八大利益集团罗马化名称（兼容旧存档，幂等）
+rome_ig_rename_check = {
+	effect = {
+		if = {
+			limit = { c:SPQR ?= this }
+			ig:ig_armed_forces ?= { set_interest_group_name = ig_armed_forces_spqr }
+			ig:ig_landowners ?= { set_interest_group_name = ig_landowners_spqr }
+			ig:ig_devout ?= { set_interest_group_name = ig_devout_spqr }
+			ig:ig_industrialists ?= { set_interest_group_name = ig_industrialists_spqr }
+			ig:ig_intelligentsia ?= { set_interest_group_name = ig_intelligentsia_spqr }
+			ig:ig_trade_unions ?= { set_interest_group_name = ig_trade_unions_spqr }
+			ig:ig_rural_folk ?= { set_interest_group_name = ig_rural_folk_spqr }
+			ig:ig_petty_bourgeoisie ?= { set_interest_group_name = ig_petty_bourgeoisie_spqr }
+		}
+	}
+}
+
+# 每月脉冲：为罗马道路国家（BYZ/SPQR）的四大利益集团挂载罗马化理念
+# 军队→罗马军团 地主→元老院贵族 教廷→祭司团 实业家→骑士阶层
+# 使其真正"支持"：罗马三级权力分配 / 罗马混合共和制 / 万民法
+rome_ig_ideology_check = {
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					c:BYZ ?= this
+					rome_should_use_roman_ideologies = yes
+				}
+			}
+			ig:ig_armed_forces ?= { add_ideology = ideology_rome_legions }
+			ig:ig_landowners ?= { add_ideology = ideology_rome_senatorial }
+			ig:ig_devout ?= { add_ideology = ideology_rome_pontifices }
+			ig:ig_industrialists ?= { add_ideology = ideology_rome_equestrian }
+		}
+		# 重建罗马完成后：其余利益集团也罗马化（兜底，覆盖按钮点击后新出现的IG）
+		if = {
+			limit = {
+				has_variable = rome_roman_redeclared_complete
+			}
+			ig:ig_intelligentsia ?= { add_ideology = ideology_rome_academia }
+			ig:ig_trade_unions ?= { add_ideology = ideology_rome_collegia }
+			ig:ig_rural_folk ?= { add_ideology = ideology_rome_plebs_rustica }
+			ig:ig_petty_bourgeoisie ?= { add_ideology = ideology_rome_plebs_urbana }
+		}
+	}
+}

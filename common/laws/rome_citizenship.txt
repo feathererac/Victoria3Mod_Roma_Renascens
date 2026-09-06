@@ -1,0 +1,99 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 公民权法律
+# 万民法（Jus Gentium）：罗马特色的公民权制度
+# ============================================================
+
+### 万民法 - 元老院议程解锁的公民权法律 ###
+law_jus_gentium = {
+	group = lawgroup_citizenship
+
+	icon = "gfx/interface/icons/law_icons/multicultural.dds"
+
+	progressiveness = 50
+
+	# 仅通过元老院议程解锁，不在普通法律界面显示
+	is_visible = {
+		always = no
+	}
+
+	modifier = {
+		# 权威力+50
+		country_authority_add = 50
+
+		# Primary culture: +100
+		country_acceptance_primary_culture_add = 100
+
+		# Heritage（取最高值）
+		country_acceptance_shared_heritage_trait_add = 80
+		country_acceptance_shared_heritage_trait_group_add = 70
+		country_acceptance_no_shared_heritage_trait_add = 50
+
+		# Language（取最高值）
+		country_acceptance_shared_language_trait_add = 80
+		country_acceptance_shared_language_trait_group_add = 70
+		country_acceptance_no_shared_language_trait_add = 50
+
+		# Tradition
+		country_acceptance_shared_tradition_trait_add = 25
+		country_acceptance_no_shared_tradition_trait_add = 0
+	}
+
+	acceptance_modifier = {
+		# ===== 同化允许 =====
+		country_allow_assimilation_cultural_erasure_bool = yes
+		country_allow_assimilation_open_prejudice_bool = yes
+		country_allow_assimilation_second_rate_citizen_bool = yes
+		country_allow_assimilation_full_acceptance_bool = yes
+
+		# ===== 同化率 =====
+		country_assimilation_violent_hostility_mult = 0.2
+		country_assimilation_cultural_erasure_mult = 0.3
+		country_assimilation_open_prejudice_mult = 0.4
+
+		# ===== 投票权 =====
+		# Violent hostility: 不能投票
+		country_allow_voting_violent_hostility_bool = no
+		# Cultural Erasure: -25% 投票力量
+		country_allow_voting_cultural_erasure_bool = yes
+		country_voting_power_cultural_erasure_mult = -0.25
+		country_allow_voting_open_prejudice_bool = yes
+		country_allow_voting_second_rate_citizen_bool = yes
+		country_allow_voting_full_acceptance_bool = yes
+
+		# ===== 政治力量 =====
+		country_political_strength_violent_hostility_mult = -0.3
+		country_political_strength_cultural_erasure_mult = -0.2
+		country_political_strength_open_prejudice_mult = -0.1
+		country_political_strength_second_rate_citizen_mult = 0.05
+		country_political_strength_full_acceptance_mult = 0.15
+
+		# ===== 工资 =====
+		country_wage_violent_hostility_mult = -0.3
+		country_wage_cultural_erasure_mult = -0.2
+		country_wage_open_prejudice_mult = -0.1
+
+		# ===== 资格增长 =====
+		country_qualification_growth_violent_hostility_mult = -0.5
+		country_qualification_growth_cultural_erasure_mult = -0.3
+		country_qualification_growth_open_prejudice_mult = -0.1
+
+		# ===== 军事工作 =====
+		country_disallow_military_work_violent_hostility_bool = no
+		country_disallow_military_work_cultural_erasure_bool = no
+		country_disallow_military_work_open_prejudice_bool = no
+		country_disallow_military_work_second_rate_citizen_bool = no
+		country_disallow_military_work_full_acceptance_bool = no
+
+		# ===== 政府工作 =====
+		# Violent hostility: 限制政府资助建筑的工作
+		country_disallow_government_work_violent_hostility_bool = yes
+		country_disallow_government_work_cultural_erasure_bool = no
+		country_disallow_government_work_open_prejudice_bool = no
+		country_disallow_government_work_second_rate_citizen_bool = no
+		country_disallow_government_work_full_acceptance_bool = no
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}

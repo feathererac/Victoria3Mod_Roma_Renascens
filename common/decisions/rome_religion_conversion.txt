@@ -1,0 +1,23 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 国教改信决议
+# 兜底机制：若国教未随「宣布重建罗马」切换为罗马多神教，
+# 可通过本决议手动改信（set_state_religion 为国家范围效果）
+# ============================================================
+
+rome_restore_religio_romana = {
+	is_shown = {
+		c:SPQR ?= this
+		NOT = { country_has_state_religion = rel:religio_romana }
+	}
+
+	possible = { }
+
+	when_taken = {
+		set_state_religion = rel:religio_romana
+		ruler ?= { change_character_religion = rel:religio_romana }
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

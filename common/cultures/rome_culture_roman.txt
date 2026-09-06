@@ -1,0 +1,52 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 罗马文化定义（原版格式）
+# 文化ID：roman（脚本引用 cu:roman）
+# 注意：原版文化ID无 cu_ 前缀（如 greek / north_german）
+# ============================================================
+
+roman = {
+	color = rgb { 102 2 60 }
+	religion = religio_romana
+	heritage = heritage_italic
+	language = language_italian
+
+	obsessions = {
+		wine
+	}
+
+	traditions = { }
+
+	male_common_first_names = {
+		Marcus Lucius Gaius Publius Titus Tiberius Gnaeus Sextus
+		Aulus Decimus Quintus Manius Appius Servius Numerius
+		Julius Antonius Nero Claudius Cornelius Domitius
+		Maximus Flavius Valerius Aurelius Constantinus
+		Justinianus Belisarius Heraclius Basilius Alexius Ioannes
+		Constantius Aemilius Postumius Veturius Tatius
+	}
+	female_common_first_names = {
+		Julia Livia Cornelia Claudia Marcella Octavia Faustina Agrippina
+		Messalina Vipsania Valeria Aurelia Flavia Lucilla Sabina
+		Helena Eudoxia Pulcheria Theodora Aelia Anicia Juliana
+		Atia Tullia Sempronia Terentia Caecilia Pompeia Calpurnia
+		Lucretia Porcia Hortensia
+	}
+	male_regal_first_names = {
+		Augustus Tiberius Constantinus Justinianus Caesar
+	}
+	female_regal_first_names = {
+		Livia Theodora Helena Julia
+	}
+	common_last_names = {
+		Julius Caesar Claudius Nero Pompeius Crassus Cicero
+		Brutus Antonius Octavius Lepidus Agrippa Maecenas Virgil
+		Horatius Ovidius Livius Tacitus Marius Sulla
+		Scipio Fabius Cato Varro Marcellus Flavius Aetius
+		Comnenus Ducas Angelus Palaiologus Lascaris
+		Valerius Aurelius Constantinus
+	}
+	noble_last_names = {
+		Julii Claudii Cornelii Fabii Valerii Aemilii
+		Comneni Ducae Angeloi Palaiologoi Laskaris
+	}
+}

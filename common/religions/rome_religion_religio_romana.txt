@@ -1,0 +1,12 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 罗马多神教定义（原版格式）
+# 宗教ID：religio_romana（脚本引用 rel:religio_romana）
+# 注意：原版宗教ID无 religion_ 前缀（如 catholic / orthodox）
+# 原版宗教仅支持 icon / heritage / color / taboos 四个键
+# ============================================================
+
+religio_romana = {
+	icon = "gfx/interface/icons/religion_icons/animist.dds"
+	heritage = heritage_indigenous
+	color = { 0.4 0.01 0.24 }
+}

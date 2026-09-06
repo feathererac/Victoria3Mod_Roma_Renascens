@@ -1,0 +1,462 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 领土清单
+# 用法: journal_entry / 决议中调用 rome_all_held = yes
+#       或分阶段: rome_core_held / rome_east_held / ...
+# ============================================================
+
+### T1 罗马核心区 ###
+rome_balkans = {
+    owns_entire_state_region = s:STATE_EASTERN_THRACE   # Thracia/君士坦丁堡
+    owns_entire_state_region = s:STATE_WESTERN_THRACE
+    owns_entire_state_region = s:STATE_NORTHERN_THRACE
+    owns_entire_state_region = s:STATE_BULGARIA         # Moesia
+    owns_entire_state_region = s:STATE_DOBRUDJA
+    owns_entire_state_region = s:STATE_ALBANIA          # Illyricum
+    owns_entire_state_region = s:STATE_MACEDONIA
+    owns_entire_state_region = s:STATE_SKOPIA
+    owns_entire_state_region = s:STATE_DALMATIA
+    owns_entire_state_region = s:STATE_CROATIA
+    owns_entire_state_region = s:STATE_SLAVONIA         # Pannonia
+    owns_entire_state_region = s:STATE_ISTRIA
+    owns_entire_state_region = s:STATE_BOSNIA
+    owns_entire_state_region = s:STATE_MONTENEGRO
+    owns_entire_state_region = s:STATE_WESTERN_SERBIA
+    owns_entire_state_region = s:STATE_EASTERN_SERBIA
+    owns_entire_state_region = s:STATE_KOSOVO           # Dardania
+    owns_entire_state_region = s:STATE_SLOVENIA         # Noricum
+}
+rome_greece = {
+    owns_entire_state_region = s:STATE_ATTICA           # Achaia/雅典
+    owns_entire_state_region = s:STATE_THESSALIA
+    owns_entire_state_region = s:STATE_PELOPONNESE
+    owns_entire_state_region = s:STATE_IONIAN_ISLANDS
+    owns_entire_state_region = s:STATE_CRETE
+    owns_entire_state_region = s:STATE_WEST_AEGEAN_ISLANDS
+    owns_entire_state_region = s:STATE_EAST_AEGEAN_ISLANDS
+}
+rome_anatolia = {
+    owns_entire_state_region = s:STATE_HUDAVENDIGAR     # Bithynia
+    owns_entire_state_region = s:STATE_AYDIN            # Asia/以弗所
+    owns_entire_state_region = s:STATE_KONYA            # Lycaonia
+    owns_entire_state_region = s:STATE_KASTAMONU        # Paphlagonia
+    owns_entire_state_region = s:STATE_ANKARA           # Galatia
+    owns_entire_state_region = s:STATE_ADANA            # Cilicia
+    owns_entire_state_region = s:STATE_TRABZON          # Pontus
+    owns_entire_state_region = s:STATE_ERZURUM          # Armenia
+    owns_entire_state_region = s:STATE_KARS
+    owns_entire_state_region = s:STATE_DIYARBAKIR       # Amida
+}
+rome_core_held = {
+    rome_balkans = yes
+    rome_greece = yes
+    rome_anatolia = yes
+}
+
+### T2 东方行省 ###
+rome_east_held = {
+    owns_entire_state_region = s:STATE_CYPRUS
+    owns_entire_state_region = s:STATE_PALESTINE        # Judaea/耶路撒冷
+    owns_entire_state_region = s:STATE_LEBANON          # Syria Phoenice
+    owns_entire_state_region = s:STATE_SYRIA            # Syria/安条克
+    owns_entire_state_region = s:STATE_ALEPPO
+    owns_entire_state_region = s:STATE_TRANSJORDAN      # Arabia Petraea
+    owns_entire_state_region = s:STATE_BAGHDAD          # Mesopotamia
+    owns_entire_state_region = s:STATE_MOSUL            # Assyria
+    owns_entire_state_region = s:STATE_DEIR_EZ_ZOR      # Osrhoene
+    owns_entire_state_region = s:STATE_BASRA            # 波斯湾
+    owns_entire_state_region = s:STATE_LOWER_EGYPT      # Aegyptus
+    owns_entire_state_region = s:STATE_MIDDLE_EGYPT
+    owns_entire_state_region = s:STATE_UPPER_EGYPT      # Thebais
+    owns_entire_state_region = s:STATE_SINAI
+    owns_entire_state_region = s:STATE_EGYPTIAN_DESERT
+    owns_entire_state_region = s:STATE_MATRUH
+}
+
+### T3 阿非利加 ###
+rome_africa_held = {
+    owns_entire_state_region = s:STATE_TRIPOLI          # Tripolitania
+    owns_entire_state_region = s:STATE_TUNISIA          # Africa/迦太基
+    owns_entire_state_region = s:STATE_ALGIERS          # Mauretania Caesariensis
+    owns_entire_state_region = s:STATE_CONSTANTINE      # Numidia
+    owns_entire_state_region = s:STATE_ORAN
+    owns_entire_state_region = s:STATE_FEZ              # Mauretania Tingitana
+    owns_entire_state_region = s:STATE_MARRAKECH
+    owns_entire_state_region = s:STATE_AL_RIF
+    owns_entire_state_region = s:STATE_LIBYA
+    owns_entire_state_region = s:STATE_INNER_MOROCCO
+}
+
+### T4 意大利本土 ###
+rome_italia_held = {
+    owns_entire_state_region = s:STATE_LAZIO            # Latium/罗马
+    owns_entire_state_region = s:STATE_UMBRIA
+    owns_entire_state_region = s:STATE_TUSCANY          # Etruria
+    owns_entire_state_region = s:STATE_ROMAGNA
+    owns_entire_state_region = s:STATE_EMILIA
+    owns_entire_state_region = s:STATE_VENETIA
+    owns_entire_state_region = s:STATE_LOMBARDY         # Gallia Cisalpina
+    owns_entire_state_region = s:STATE_PIEDMONT
+    owns_entire_state_region = s:STATE_SAVOY
+    owns_entire_state_region = s:STATE_ABRUZZO          # Samnium
+    owns_entire_state_region = s:STATE_CAMPANIA         # Campania
+    owns_entire_state_region = s:STATE_APULIA
+    owns_entire_state_region = s:STATE_CALABRIA         # Bruttium
+    owns_entire_state_region = s:STATE_SICILY           # Sicilia
+    owns_entire_state_region = s:STATE_SARDINIA
+    owns_entire_state_region = s:STATE_CORSICA
+    owns_entire_state_region = s:STATE_MALTA
+}
+
+### T5 西班牙 ###
+rome_hispania_held = {
+    owns_entire_state_region = s:STATE_CATALONIA        # Tarraconensis
+    owns_entire_state_region = s:STATE_ARAGON
+    owns_entire_state_region = s:STATE_VALENCIA
+    owns_entire_state_region = s:STATE_BASQUE_COUNTRY
+    owns_entire_state_region = s:STATE_OLD_CASTILE
+    owns_entire_state_region = s:STATE_NEW_CASTILE      # Carpetania
+    owns_entire_state_region = s:STATE_LEON
+    owns_entire_state_region = s:STATE_ASTURIAS
+    owns_entire_state_region = s:STATE_GALICIA          # Gallaecia
+    owns_entire_state_region = s:STATE_EXTREMADURA      # Lusitania/梅里达
+    owns_entire_state_region = s:STATE_MURCIA           # Carthaginensis
+    owns_entire_state_region = s:STATE_LOWER_ANDALUSIA  # Baetica
+    owns_entire_state_region = s:STATE_UPPER_ANDALUSIA
+    owns_entire_state_region = s:STATE_BALEARIC_ISLANDS
+    owns_entire_state_region = s:STATE_BEIRA
+    owns_entire_state_region = s:STATE_ESTREMADURA      # 里斯本
+    owns_entire_state_region = s:STATE_ALENTEJO
+    owns_entire_state_region = s:STATE_ENTRE_DOURO_E_MINHO
+}
+
+### T6 高卢 ###
+rome_gallia_held = {
+    owns_entire_state_region = s:STATE_ILE_DE_FRANCE    # 卢泰西亚
+    owns_entire_state_region = s:STATE_PROVENCE         # Narbonensis
+    owns_entire_state_region = s:STATE_NORMANDY
+    owns_entire_state_region = s:STATE_LANGUEDOC
+    owns_entire_state_region = s:STATE_RHONE
+    owns_entire_state_region = s:STATE_FRENCH_LOW_COUNTRIES
+    owns_entire_state_region = s:STATE_PICARDY
+    owns_entire_state_region = s:STATE_POITOU
+    owns_entire_state_region = s:STATE_GUYENNE
+    owns_entire_state_region = s:STATE_AQUITAINE
+    owns_entire_state_region = s:STATE_AUVERGNE_LIMOUSIN
+    owns_entire_state_region = s:STATE_BRITTANY
+    owns_entire_state_region = s:STATE_MAINE_ANJOU
+    owns_entire_state_region = s:STATE_BURGUNDY
+    owns_entire_state_region = s:STATE_CHAMPAGNE
+    owns_entire_state_region = s:STATE_FRANCHE_COMTE
+    owns_entire_state_region = s:STATE_ORLEANS
+    owns_entire_state_region = s:STATE_ALSACE_LORRAINE  # Germania Superior
+    owns_entire_state_region = s:STATE_LORRAINE
+}
+
+### T7 不列颠尼亚 ###
+rome_britannia_held = {
+    owns_entire_state_region = s:STATE_HOME_COUNTIES    # Londinium
+    owns_entire_state_region = s:STATE_LANCASHIRE
+    owns_entire_state_region = s:STATE_WALES
+    owns_entire_state_region = s:STATE_YORKSHIRE        # Eburacum
+    owns_entire_state_region = s:STATE_MIDLANDS
+    owns_entire_state_region = s:STATE_EAST_ANGLIA
+    owns_entire_state_region = s:STATE_WEST_COUNTRY
+}
+
+### T8 莱茵-多瑙（⚠️ 州名请对照你的00/01/02文件核实拼写） ###
+rome_danube_held = {
+    owns_entire_state_region = s:STATE_RHINELAND        # Germania Inferior
+    owns_entire_state_region = s:STATE_TYROL            # Raetia
+    owns_entire_state_region = s:STATE_EAST_SWITZERLAND # Raetia
+    owns_entire_state_region = s:STATE_WEST_SWITZERLAND # Raetia
+    owns_entire_state_region = s:STATE_AUSTRIA          # Noricum
+    owns_entire_state_region = s:STATE_TRANSDANUBIA     # Pannonia
+    owns_entire_state_region = s:STATE_BANAT            # Dacia
+    owns_entire_state_region = s:STATE_NORTHERN_TRANSYLVANIA
+    owns_entire_state_region = s:STATE_SOUTHERN_TRANSYLVANIA
+    owns_entire_state_region = s:STATE_WALLACHIA
+    owns_entire_state_region = s:STATE_MOLDAVIA
+    owns_entire_state_region = s:STATE_BUKOVINA
+    owns_entire_state_region = s:STATE_SOUTH_TYROL
+    owns_entire_state_region = s:STATE_STYRIA
+    owns_entire_state_region = s:STATE_DELVIDEK
+    owns_entire_state_region = s:STATE_CENTRAL_HUNGARY
+    owns_entire_state_region = s:STATE_BEKES
+    owns_entire_state_region = s:STATE_BESSARABIA
+    owns_entire_state_region = s:STATE_BADEN
+    owns_entire_state_region = s:STATE_WURTTEMBERG
+}
+
+### T9 高加索 ###
+rome_caucasus_held = {
+    owns_entire_state_region = s:STATE_ARMENIA          # 图拉真新省
+    owns_entire_state_region = s:STATE_CRIMEA           # Chersonesus
+    owns_entire_state_region = s:STATE_ELIZAVETPOL
+    owns_entire_state_region = s:STATE_AZERBAIJAN
+    owns_entire_state_region = s:STATE_DAGESTAN
+    owns_entire_state_region = s:STATE_NORTH_CAUCASUS
+    owns_entire_state_region = s:STATE_GREATER_CAUCASUS
+    owns_entire_state_region = s:STATE_STAVROPOL
+    owns_entire_state_region = s:STATE_KUBAN
+}
+
+### T10 阿拉伯半岛（游戏性扩展·产油区） ###
+rome_arabia_held = {
+    owns_entire_state_region = s:STATE_HEDJAZ           # 麦加
+    owns_entire_state_region = s:STATE_NEJD             # 大油田
+    owns_entire_state_region = s:STATE_HAIL
+    owns_entire_state_region = s:STATE_OMAN
+    owns_entire_state_region = s:STATE_ABU_DHABI        # 80油
+    owns_entire_state_region = s:STATE_YEMEN            # Arabia Felix
+}
+
+### 汇总：全罗马 ###
+rome_all_held = {
+    rome_core_held = yes
+    rome_east_held = yes
+    rome_africa_held = yes
+    rome_italia_held = yes
+    rome_hispania_held = yes
+    rome_gallia_held = yes
+    rome_britannia_held = yes
+    rome_danube_held = yes
+    rome_caucasus_held = yes
+    rome_arabia_held = yes
+}
+
+### 奥斯曼地区罗马领土（用于重建东罗马事件触发） ###
+rome_ottoman_held = {
+    # 巴尔干
+    owns_entire_state_region = s:STATE_EASTERN_THRACE
+    owns_entire_state_region = s:STATE_WESTERN_THRACE
+    owns_entire_state_region = s:STATE_NORTHERN_THRACE
+    owns_entire_state_region = s:STATE_BULGARIA
+    owns_entire_state_region = s:STATE_DOBRUDJA
+    owns_entire_state_region = s:STATE_ALBANIA
+    owns_entire_state_region = s:STATE_MACEDONIA
+    owns_entire_state_region = s:STATE_SKOPIA
+    owns_entire_state_region = s:STATE_BOSNIA
+    owns_entire_state_region = s:STATE_MONTENEGRO
+    owns_entire_state_region = s:STATE_KOSOVO
+    owns_entire_state_region = s:STATE_WESTERN_SERBIA
+    owns_entire_state_region = s:STATE_EASTERN_SERBIA
+    # 希腊岛屿
+    owns_entire_state_region = s:STATE_IONIAN_ISLANDS
+    owns_entire_state_region = s:STATE_CRETE
+    owns_entire_state_region = s:STATE_WEST_AEGEAN_ISLANDS
+    owns_entire_state_region = s:STATE_EAST_AEGEAN_ISLANDS
+    # 安纳托利亚
+    owns_entire_state_region = s:STATE_HUDAVENDIGAR
+    owns_entire_state_region = s:STATE_AYDIN
+    owns_entire_state_region = s:STATE_KONYA
+    owns_entire_state_region = s:STATE_KASTAMONU
+    owns_entire_state_region = s:STATE_ANKARA
+    owns_entire_state_region = s:STATE_ADANA
+    owns_entire_state_region = s:STATE_TRABZON
+    owns_entire_state_region = s:STATE_ERZURUM
+    owns_entire_state_region = s:STATE_KARS
+    owns_entire_state_region = s:STATE_DIYARBAKIR
+    # 东方行省
+    owns_entire_state_region = s:STATE_CYPRUS
+    owns_entire_state_region = s:STATE_PALESTINE
+    owns_entire_state_region = s:STATE_LEBANON
+    owns_entire_state_region = s:STATE_SYRIA
+    owns_entire_state_region = s:STATE_ALEPPO
+    owns_entire_state_region = s:STATE_TRANSJORDAN
+    owns_entire_state_region = s:STATE_BAGHDAD
+    owns_entire_state_region = s:STATE_MOSUL
+    owns_entire_state_region = s:STATE_DEIR_EZ_ZOR
+    owns_entire_state_region = s:STATE_BASRA
+    # 埃及
+    owns_entire_state_region = s:STATE_LOWER_EGYPT
+    owns_entire_state_region = s:STATE_MIDDLE_EGYPT
+    owns_entire_state_region = s:STATE_UPPER_EGYPT
+    owns_entire_state_region = s:STATE_SINAI
+    owns_entire_state_region = s:STATE_EGYPTIAN_DESERT
+    owns_entire_state_region = s:STATE_MATRUH
+    # 北非
+    owns_entire_state_region = s:STATE_TRIPOLI
+    owns_entire_state_region = s:STATE_LIBYA
+}
+
+### 检测：是否存在已拥有但未整合的罗马领土 ###
+rome_has_unincorporated = {
+    any_scope_state = {
+        owner = ROOT
+        is_incorporated = no
+        OR = {
+            state_region = s:STATE_EASTERN_THRACE
+            state_region = s:STATE_WESTERN_THRACE
+            state_region = s:STATE_NORTHERN_THRACE
+            state_region = s:STATE_BULGARIA
+            state_region = s:STATE_DOBRUDJA
+            state_region = s:STATE_ALBANIA
+            state_region = s:STATE_MACEDONIA
+            state_region = s:STATE_SKOPIA
+            state_region = s:STATE_DALMATIA
+            state_region = s:STATE_CROATIA
+            state_region = s:STATE_SLAVONIA
+            state_region = s:STATE_ISTRIA
+            state_region = s:STATE_BOSNIA
+            state_region = s:STATE_MONTENEGRO
+            state_region = s:STATE_WESTERN_SERBIA
+            state_region = s:STATE_EASTERN_SERBIA
+            state_region = s:STATE_KOSOVO
+            state_region = s:STATE_SLOVENIA
+            state_region = s:STATE_ATTICA
+            state_region = s:STATE_THESSALIA
+            state_region = s:STATE_PELOPONNESE
+            state_region = s:STATE_IONIAN_ISLANDS
+            state_region = s:STATE_CRETE
+            state_region = s:STATE_WEST_AEGEAN_ISLANDS
+            state_region = s:STATE_EAST_AEGEAN_ISLANDS
+            state_region = s:STATE_HUDAVENDIGAR
+            state_region = s:STATE_AYDIN
+            state_region = s:STATE_KONYA
+            state_region = s:STATE_KASTAMONU
+            state_region = s:STATE_ANKARA
+            state_region = s:STATE_ADANA
+            state_region = s:STATE_TRABZON
+            state_region = s:STATE_ERZURUM
+            state_region = s:STATE_KARS
+            state_region = s:STATE_DIYARBAKIR
+            state_region = s:STATE_CYPRUS
+            state_region = s:STATE_PALESTINE
+            state_region = s:STATE_LEBANON
+            state_region = s:STATE_SYRIA
+            state_region = s:STATE_ALEPPO
+            state_region = s:STATE_TRANSJORDAN
+            state_region = s:STATE_BAGHDAD
+            state_region = s:STATE_MOSUL
+            state_region = s:STATE_DEIR_EZ_ZOR
+            state_region = s:STATE_BASRA
+            state_region = s:STATE_LOWER_EGYPT
+            state_region = s:STATE_MIDDLE_EGYPT
+            state_region = s:STATE_UPPER_EGYPT
+            state_region = s:STATE_SINAI
+            state_region = s:STATE_EGYPTIAN_DESERT
+            state_region = s:STATE_MATRUH
+            state_region = s:STATE_TRIPOLI
+            state_region = s:STATE_TUNISIA
+            state_region = s:STATE_ALGIERS
+            state_region = s:STATE_CONSTANTINE
+            state_region = s:STATE_ORAN
+            state_region = s:STATE_FEZ
+            state_region = s:STATE_MARRAKECH
+            state_region = s:STATE_AL_RIF
+            state_region = s:STATE_LIBYA
+            state_region = s:STATE_INNER_MOROCCO
+            state_region = s:STATE_LAZIO
+            state_region = s:STATE_UMBRIA
+            state_region = s:STATE_TUSCANY
+            state_region = s:STATE_ROMAGNA
+            state_region = s:STATE_EMILIA
+            state_region = s:STATE_VENETIA
+            state_region = s:STATE_LOMBARDY
+            state_region = s:STATE_PIEDMONT
+            state_region = s:STATE_SAVOY
+            state_region = s:STATE_ABRUZZO
+            state_region = s:STATE_CAMPANIA
+            state_region = s:STATE_APULIA
+            state_region = s:STATE_CALABRIA
+            state_region = s:STATE_SICILY
+            state_region = s:STATE_SARDINIA
+            state_region = s:STATE_CORSICA
+            state_region = s:STATE_MALTA
+            state_region = s:STATE_CATALONIA
+            state_region = s:STATE_ARAGON
+            state_region = s:STATE_VALENCIA
+            state_region = s:STATE_BASQUE_COUNTRY
+            state_region = s:STATE_OLD_CASTILE
+            state_region = s:STATE_NEW_CASTILE
+            state_region = s:STATE_LEON
+            state_region = s:STATE_ASTURIAS
+            state_region = s:STATE_GALICIA
+            state_region = s:STATE_EXTREMADURA
+            state_region = s:STATE_MURCIA
+            state_region = s:STATE_LOWER_ANDALUSIA
+            state_region = s:STATE_UPPER_ANDALUSIA
+            state_region = s:STATE_BALEARIC_ISLANDS
+            state_region = s:STATE_BEIRA
+            state_region = s:STATE_ESTREMADURA
+            state_region = s:STATE_ALENTEJO
+            state_region = s:STATE_ENTRE_DOURO_E_MINHO
+            state_region = s:STATE_ILE_DE_FRANCE
+            state_region = s:STATE_PROVENCE
+            state_region = s:STATE_NORMANDY
+            state_region = s:STATE_LANGUEDOC
+            state_region = s:STATE_RHONE
+            state_region = s:STATE_FRENCH_LOW_COUNTRIES
+            state_region = s:STATE_PICARDY
+            state_region = s:STATE_POITOU
+            state_region = s:STATE_GUYENNE
+            state_region = s:STATE_AQUITAINE
+            state_region = s:STATE_AUVERGNE_LIMOUSIN
+            state_region = s:STATE_BRITTANY
+            state_region = s:STATE_MAINE_ANJOU
+            state_region = s:STATE_BURGUNDY
+            state_region = s:STATE_CHAMPAGNE
+            state_region = s:STATE_FRANCHE_COMTE
+            state_region = s:STATE_ORLEANS
+            state_region = s:STATE_ALSACE_LORRAINE
+            state_region = s:STATE_LORRAINE
+            state_region = s:STATE_HOME_COUNTIES
+            state_region = s:STATE_LANCASHIRE
+            state_region = s:STATE_WALES
+            state_region = s:STATE_YORKSHIRE
+            state_region = s:STATE_MIDLANDS
+            state_region = s:STATE_EAST_ANGLIA
+            state_region = s:STATE_WEST_COUNTRY
+            state_region = s:STATE_RHINELAND
+            state_region = s:STATE_TYROL
+            state_region = s:STATE_EAST_SWITZERLAND
+            state_region = s:STATE_WEST_SWITZERLAND
+            state_region = s:STATE_AUSTRIA
+            state_region = s:STATE_TRANSDANUBIA
+            state_region = s:STATE_BANAT
+            state_region = s:STATE_NORTHERN_TRANSYLVANIA
+            state_region = s:STATE_SOUTHERN_TRANSYLVANIA
+            state_region = s:STATE_WALLACHIA
+            state_region = s:STATE_MOLDAVIA
+            state_region = s:STATE_BUKOVINA
+            state_region = s:STATE_SOUTH_TYROL
+            state_region = s:STATE_STYRIA
+            state_region = s:STATE_DELVIDEK
+            state_region = s:STATE_CENTRAL_HUNGARY
+            state_region = s:STATE_BEKES
+            state_region = s:STATE_BESSARABIA
+            state_region = s:STATE_BADEN
+            state_region = s:STATE_WURTTEMBERG
+            state_region = s:STATE_ARMENIA
+            state_region = s:STATE_CRIMEA
+            state_region = s:STATE_ELIZAVETPOL
+            state_region = s:STATE_AZERBAIJAN
+            state_region = s:STATE_DAGESTAN
+            state_region = s:STATE_NORTH_CAUCASUS
+            state_region = s:STATE_GREATER_CAUCASUS
+            state_region = s:STATE_STAVROPOL
+            state_region = s:STATE_KUBAN
+            state_region = s:STATE_HEDJAZ
+            state_region = s:STATE_NEJD
+            state_region = s:STATE_HAIL
+            state_region = s:STATE_OMAN
+            state_region = s:STATE_ABU_DHABI
+            state_region = s:STATE_YEMEN
+        }
+    }
+}
+
+### 检测所有非边缘利益集团支持度是否>=0（用于元老院议程） ###
+rome_all_igs_supportive = {
+    every_interest_group = {
+        limit = {
+            is_marginal = no
+        }
+        ig_approval >= 0
+    }
+}
+
+### 检测是否已重建罗马（rome.1事件后设置） ###
+rome_byzantium_rebuilt = {
+    has_variable = rome_eastern_rome_rebuilt
+}

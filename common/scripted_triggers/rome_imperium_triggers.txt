@@ -1,0 +1,20 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 宣布重建罗马 - 脚本触发器
+# ============================================================
+
+### 是否显示「宣布重建罗马」按钮：只要是 BYZ（拜占庭）或 SPQR（罗马帝国）且尚未完成即可
+rome_can_declare_imperium = {
+	OR = {
+		c:BYZ ?= this
+		c:SPQR ?= this
+	}
+	NOT = { has_variable = rome_roman_redeclared_complete }
+}
+
+### 罗马化 IG 理念（全局） - 为理念 possible 块准备的通用触发器
+rome_should_use_roman_ideologies = {
+	OR = {
+		c:SPQR ?= this
+		has_variable = rome_augustus_roman_redeclared
+	}
+}

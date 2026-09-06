@@ -1,0 +1,512 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 脚本效果
+# ============================================================
+
+### 给当前国家添加奥斯曼地区所有罗马领土的宣称 ###
+rome_add_ottoman_claims = {
+	# 巴尔干地区
+	s:STATE_EASTERN_THRACE = { add_claim = ROOT }
+	s:STATE_WESTERN_THRACE = { add_claim = ROOT }
+	s:STATE_NORTHERN_THRACE = { add_claim = ROOT }
+	s:STATE_BULGARIA = { add_claim = ROOT }
+	s:STATE_DOBRUDJA = { add_claim = ROOT }
+	s:STATE_ALBANIA = { add_claim = ROOT }
+	s:STATE_MACEDONIA = { add_claim = ROOT }
+	s:STATE_SKOPIA = { add_claim = ROOT }
+	s:STATE_BOSNIA = { add_claim = ROOT }
+	s:STATE_MONTENEGRO = { add_claim = ROOT }
+	s:STATE_KOSOVO = { add_claim = ROOT }
+	s:STATE_WESTERN_SERBIA = { add_claim = ROOT }
+	s:STATE_EASTERN_SERBIA = { add_claim = ROOT }
+	# 希腊地区（奥斯曼所属）
+	s:STATE_IONIAN_ISLANDS = { add_claim = ROOT }
+	s:STATE_CRETE = { add_claim = ROOT }
+	s:STATE_WEST_AEGEAN_ISLANDS = { add_claim = ROOT }
+	s:STATE_EAST_AEGEAN_ISLANDS = { add_claim = ROOT }
+	# 安纳托利亚
+	s:STATE_HUDAVENDIGAR = { add_claim = ROOT }
+	s:STATE_AYDIN = { add_claim = ROOT }
+	s:STATE_KONYA = { add_claim = ROOT }
+	s:STATE_KASTAMONU = { add_claim = ROOT }
+	s:STATE_ANKARA = { add_claim = ROOT }
+	s:STATE_ADANA = { add_claim = ROOT }
+	s:STATE_TRABZON = { add_claim = ROOT }
+	s:STATE_ERZURUM = { add_claim = ROOT }
+	s:STATE_KARS = { add_claim = ROOT }
+	s:STATE_DIYARBAKIR = { add_claim = ROOT }
+	# 东方行省
+	s:STATE_CYPRUS = { add_claim = ROOT }
+	s:STATE_PALESTINE = { add_claim = ROOT }
+	s:STATE_LEBANON = { add_claim = ROOT }
+	s:STATE_SYRIA = { add_claim = ROOT }
+	s:STATE_ALEPPO = { add_claim = ROOT }
+	s:STATE_TRANSJORDAN = { add_claim = ROOT }
+	s:STATE_BAGHDAD = { add_claim = ROOT }
+	s:STATE_MOSUL = { add_claim = ROOT }
+	s:STATE_DEIR_EZ_ZOR = { add_claim = ROOT }
+	s:STATE_BASRA = { add_claim = ROOT }
+	# 埃及
+	s:STATE_LOWER_EGYPT = { add_claim = ROOT }
+	s:STATE_MIDDLE_EGYPT = { add_claim = ROOT }
+	s:STATE_UPPER_EGYPT = { add_claim = ROOT }
+	s:STATE_SINAI = { add_claim = ROOT }
+	s:STATE_EGYPTIAN_DESERT = { add_claim = ROOT }
+	s:STATE_MATRUH = { add_claim = ROOT }
+	# 北非（的黎波里/昔兰尼加）
+	s:STATE_TRIPOLI = { add_claim = ROOT }
+	s:STATE_LIBYA = { add_claim = ROOT }
+}
+
+### 给当前国家添加整个罗马帝国所有领土的宣称 ###
+rome_add_all_claims = {
+	# T1 罗马核心区
+	s:STATE_EASTERN_THRACE = { add_claim = ROOT }
+	s:STATE_WESTERN_THRACE = { add_claim = ROOT }
+	s:STATE_NORTHERN_THRACE = { add_claim = ROOT }
+	s:STATE_BULGARIA = { add_claim = ROOT }
+	s:STATE_DOBRUDJA = { add_claim = ROOT }
+	s:STATE_ALBANIA = { add_claim = ROOT }
+	s:STATE_MACEDONIA = { add_claim = ROOT }
+	s:STATE_SKOPIA = { add_claim = ROOT }
+	s:STATE_DALMATIA = { add_claim = ROOT }
+	s:STATE_CROATIA = { add_claim = ROOT }
+	s:STATE_SLAVONIA = { add_claim = ROOT }
+	s:STATE_ISTRIA = { add_claim = ROOT }
+	s:STATE_BOSNIA = { add_claim = ROOT }
+	s:STATE_MONTENEGRO = { add_claim = ROOT }
+	s:STATE_WESTERN_SERBIA = { add_claim = ROOT }
+	s:STATE_EASTERN_SERBIA = { add_claim = ROOT }
+	s:STATE_KOSOVO = { add_claim = ROOT }
+	s:STATE_SLOVENIA = { add_claim = ROOT }
+	s:STATE_ATTICA = { add_claim = ROOT }
+	s:STATE_THESSALIA = { add_claim = ROOT }
+	s:STATE_PELOPONNESE = { add_claim = ROOT }
+	s:STATE_IONIAN_ISLANDS = { add_claim = ROOT }
+	s:STATE_CRETE = { add_claim = ROOT }
+	s:STATE_WEST_AEGEAN_ISLANDS = { add_claim = ROOT }
+	s:STATE_EAST_AEGEAN_ISLANDS = { add_claim = ROOT }
+	s:STATE_HUDAVENDIGAR = { add_claim = ROOT }
+	s:STATE_AYDIN = { add_claim = ROOT }
+	s:STATE_KONYA = { add_claim = ROOT }
+	s:STATE_KASTAMONU = { add_claim = ROOT }
+	s:STATE_ANKARA = { add_claim = ROOT }
+	s:STATE_ADANA = { add_claim = ROOT }
+	s:STATE_TRABZON = { add_claim = ROOT }
+	s:STATE_ERZURUM = { add_claim = ROOT }
+	s:STATE_KARS = { add_claim = ROOT }
+	s:STATE_DIYARBAKIR = { add_claim = ROOT }
+	# T2 东方行省
+	s:STATE_CYPRUS = { add_claim = ROOT }
+	s:STATE_PALESTINE = { add_claim = ROOT }
+	s:STATE_LEBANON = { add_claim = ROOT }
+	s:STATE_SYRIA = { add_claim = ROOT }
+	s:STATE_ALEPPO = { add_claim = ROOT }
+	s:STATE_TRANSJORDAN = { add_claim = ROOT }
+	s:STATE_BAGHDAD = { add_claim = ROOT }
+	s:STATE_MOSUL = { add_claim = ROOT }
+	s:STATE_DEIR_EZ_ZOR = { add_claim = ROOT }
+	s:STATE_BASRA = { add_claim = ROOT }
+	s:STATE_LOWER_EGYPT = { add_claim = ROOT }
+	s:STATE_MIDDLE_EGYPT = { add_claim = ROOT }
+	s:STATE_UPPER_EGYPT = { add_claim = ROOT }
+	s:STATE_SINAI = { add_claim = ROOT }
+	s:STATE_EGYPTIAN_DESERT = { add_claim = ROOT }
+	s:STATE_MATRUH = { add_claim = ROOT }
+	# T3 阿非利加
+	s:STATE_TRIPOLI = { add_claim = ROOT }
+	s:STATE_TUNISIA = { add_claim = ROOT }
+	s:STATE_ALGIERS = { add_claim = ROOT }
+	s:STATE_CONSTANTINE = { add_claim = ROOT }
+	s:STATE_ORAN = { add_claim = ROOT }
+	s:STATE_FEZ = { add_claim = ROOT }
+	s:STATE_MARRAKECH = { add_claim = ROOT }
+	s:STATE_AL_RIF = { add_claim = ROOT }
+	s:STATE_LIBYA = { add_claim = ROOT }
+	s:STATE_INNER_MOROCCO = { add_claim = ROOT }
+	# T4 意大利
+	s:STATE_LAZIO = { add_claim = ROOT }
+	s:STATE_UMBRIA = { add_claim = ROOT }
+	s:STATE_TUSCANY = { add_claim = ROOT }
+	s:STATE_ROMAGNA = { add_claim = ROOT }
+	s:STATE_EMILIA = { add_claim = ROOT }
+	s:STATE_VENETIA = { add_claim = ROOT }
+	s:STATE_LOMBARDY = { add_claim = ROOT }
+	s:STATE_PIEDMONT = { add_claim = ROOT }
+	s:STATE_SAVOY = { add_claim = ROOT }
+	s:STATE_ABRUZZO = { add_claim = ROOT }
+	s:STATE_CAMPANIA = { add_claim = ROOT }
+	s:STATE_APULIA = { add_claim = ROOT }
+	s:STATE_CALABRIA = { add_claim = ROOT }
+	s:STATE_SICILY = { add_claim = ROOT }
+	s:STATE_SARDINIA = { add_claim = ROOT }
+	s:STATE_CORSICA = { add_claim = ROOT }
+	s:STATE_MALTA = { add_claim = ROOT }
+	# T5 西班牙
+	s:STATE_CATALONIA = { add_claim = ROOT }
+	s:STATE_ARAGON = { add_claim = ROOT }
+	s:STATE_VALENCIA = { add_claim = ROOT }
+	s:STATE_BASQUE_COUNTRY = { add_claim = ROOT }
+	s:STATE_OLD_CASTILE = { add_claim = ROOT }
+	s:STATE_NEW_CASTILE = { add_claim = ROOT }
+	s:STATE_LEON = { add_claim = ROOT }
+	s:STATE_ASTURIAS = { add_claim = ROOT }
+	s:STATE_GALICIA = { add_claim = ROOT }
+	s:STATE_EXTREMADURA = { add_claim = ROOT }
+	s:STATE_MURCIA = { add_claim = ROOT }
+	s:STATE_LOWER_ANDALUSIA = { add_claim = ROOT }
+	s:STATE_UPPER_ANDALUSIA = { add_claim = ROOT }
+	s:STATE_BALEARIC_ISLANDS = { add_claim = ROOT }
+	s:STATE_BEIRA = { add_claim = ROOT }
+	s:STATE_ESTREMADURA = { add_claim = ROOT }
+	s:STATE_ALENTEJO = { add_claim = ROOT }
+	s:STATE_ENTRE_DOURO_E_MINHO = { add_claim = ROOT }
+	# T6 高卢
+	s:STATE_ILE_DE_FRANCE = { add_claim = ROOT }
+	s:STATE_PROVENCE = { add_claim = ROOT }
+	s:STATE_NORMANDY = { add_claim = ROOT }
+	s:STATE_LANGUEDOC = { add_claim = ROOT }
+	s:STATE_RHONE = { add_claim = ROOT }
+	s:STATE_FRENCH_LOW_COUNTRIES = { add_claim = ROOT }
+	s:STATE_PICARDY = { add_claim = ROOT }
+	s:STATE_POITOU = { add_claim = ROOT }
+	s:STATE_GUYENNE = { add_claim = ROOT }
+	s:STATE_AQUITAINE = { add_claim = ROOT }
+	s:STATE_AUVERGNE_LIMOUSIN = { add_claim = ROOT }
+	s:STATE_BRITTANY = { add_claim = ROOT }
+	s:STATE_MAINE_ANJOU = { add_claim = ROOT }
+	s:STATE_BURGUNDY = { add_claim = ROOT }
+	s:STATE_CHAMPAGNE = { add_claim = ROOT }
+	s:STATE_FRANCHE_COMTE = { add_claim = ROOT }
+	s:STATE_ORLEANS = { add_claim = ROOT }
+	s:STATE_ALSACE_LORRAINE = { add_claim = ROOT }
+	s:STATE_LORRAINE = { add_claim = ROOT }
+	# T7 不列颠尼亚
+	s:STATE_HOME_COUNTIES = { add_claim = ROOT }
+	s:STATE_LANCASHIRE = { add_claim = ROOT }
+	s:STATE_WALES = { add_claim = ROOT }
+	s:STATE_YORKSHIRE = { add_claim = ROOT }
+	s:STATE_MIDLANDS = { add_claim = ROOT }
+	s:STATE_EAST_ANGLIA = { add_claim = ROOT }
+	s:STATE_WEST_COUNTRY = { add_claim = ROOT }
+	# T8 莱茵-多瑙
+	s:STATE_RHINELAND = { add_claim = ROOT }
+	s:STATE_TYROL = { add_claim = ROOT }
+	s:STATE_EAST_SWITZERLAND = { add_claim = ROOT }
+	s:STATE_WEST_SWITZERLAND = { add_claim = ROOT }
+	s:STATE_AUSTRIA = { add_claim = ROOT }
+	s:STATE_TRANSDANUBIA = { add_claim = ROOT }
+	s:STATE_BANAT = { add_claim = ROOT }
+	s:STATE_NORTHERN_TRANSYLVANIA = { add_claim = ROOT }
+	s:STATE_SOUTHERN_TRANSYLVANIA = { add_claim = ROOT }
+	s:STATE_WALLACHIA = { add_claim = ROOT }
+	s:STATE_MOLDAVIA = { add_claim = ROOT }
+	s:STATE_BUKOVINA = { add_claim = ROOT }
+	s:STATE_SOUTH_TYROL = { add_claim = ROOT }
+	s:STATE_STYRIA = { add_claim = ROOT }
+	s:STATE_DELVIDEK = { add_claim = ROOT }
+	s:STATE_CENTRAL_HUNGARY = { add_claim = ROOT }
+	s:STATE_BEKES = { add_claim = ROOT }
+	s:STATE_BESSARABIA = { add_claim = ROOT }
+	s:STATE_BADEN = { add_claim = ROOT }
+	s:STATE_WURTTEMBERG = { add_claim = ROOT }
+	# T9 高加索
+	s:STATE_ARMENIA = { add_claim = ROOT }
+	s:STATE_CRIMEA = { add_claim = ROOT }
+	s:STATE_ELIZAVETPOL = { add_claim = ROOT }
+	s:STATE_AZERBAIJAN = { add_claim = ROOT }
+	s:STATE_DAGESTAN = { add_claim = ROOT }
+	s:STATE_NORTH_CAUCASUS = { add_claim = ROOT }
+	s:STATE_GREATER_CAUCASUS = { add_claim = ROOT }
+	s:STATE_STAVROPOL = { add_claim = ROOT }
+	s:STATE_KUBAN = { add_claim = ROOT }
+	# T10 阿拉伯
+	s:STATE_HEDJAZ = { add_claim = ROOT }
+	s:STATE_NEJD = { add_claim = ROOT }
+	s:STATE_HAIL = { add_claim = ROOT }
+	s:STATE_OMAN = { add_claim = ROOT }
+	s:STATE_ABU_DHABI = { add_claim = ROOT }
+	s:STATE_YEMEN = { add_claim = ROOT }
+}
+
+### 奥古斯都系统：分区宣称效果 ###
+rome_add_italia_claims = {
+	s:STATE_LAZIO = { add_claim = ROOT }
+	s:STATE_UMBRIA = { add_claim = ROOT }
+	s:STATE_TUSCANY = { add_claim = ROOT }
+	s:STATE_ROMAGNA = { add_claim = ROOT }
+	s:STATE_EMILIA = { add_claim = ROOT }
+	s:STATE_VENETIA = { add_claim = ROOT }
+	s:STATE_LOMBARDY = { add_claim = ROOT }
+	s:STATE_PIEDMONT = { add_claim = ROOT }
+	s:STATE_SAVOY = { add_claim = ROOT }
+	s:STATE_ABRUZZO = { add_claim = ROOT }
+	s:STATE_CAMPANIA = { add_claim = ROOT }
+	s:STATE_APULIA = { add_claim = ROOT }
+	s:STATE_CALABRIA = { add_claim = ROOT }
+	s:STATE_SICILY = { add_claim = ROOT }
+	s:STATE_SARDINIA = { add_claim = ROOT }
+	s:STATE_CORSICA = { add_claim = ROOT }
+	s:STATE_MALTA = { add_claim = ROOT }
+}
+
+rome_add_gallia_claims = {
+	s:STATE_ILE_DE_FRANCE = { add_claim = ROOT }
+	s:STATE_PROVENCE = { add_claim = ROOT }
+	s:STATE_NORMANDY = { add_claim = ROOT }
+	s:STATE_LANGUEDOC = { add_claim = ROOT }
+	s:STATE_RHONE = { add_claim = ROOT }
+	s:STATE_FRENCH_LOW_COUNTRIES = { add_claim = ROOT }
+	s:STATE_PICARDY = { add_claim = ROOT }
+	s:STATE_POITOU = { add_claim = ROOT }
+	s:STATE_GUYENNE = { add_claim = ROOT }
+	s:STATE_AQUITAINE = { add_claim = ROOT }
+	s:STATE_AUVERGNE_LIMOUSIN = { add_claim = ROOT }
+	s:STATE_BRITTANY = { add_claim = ROOT }
+	s:STATE_MAINE_ANJOU = { add_claim = ROOT }
+	s:STATE_BURGUNDY = { add_claim = ROOT }
+	s:STATE_CHAMPAGNE = { add_claim = ROOT }
+	s:STATE_FRANCHE_COMTE = { add_claim = ROOT }
+	s:STATE_ORLEANS = { add_claim = ROOT }
+	s:STATE_ALSACE_LORRAINE = { add_claim = ROOT }
+	s:STATE_LORRAINE = { add_claim = ROOT }
+}
+
+rome_add_hispania_claims = {
+	s:STATE_CATALONIA = { add_claim = ROOT }
+	s:STATE_ARAGON = { add_claim = ROOT }
+	s:STATE_VALENCIA = { add_claim = ROOT }
+	s:STATE_BASQUE_COUNTRY = { add_claim = ROOT }
+	s:STATE_OLD_CASTILE = { add_claim = ROOT }
+	s:STATE_NEW_CASTILE = { add_claim = ROOT }
+	s:STATE_LEON = { add_claim = ROOT }
+	s:STATE_ASTURIAS = { add_claim = ROOT }
+	s:STATE_GALICIA = { add_claim = ROOT }
+	s:STATE_EXTREMADURA = { add_claim = ROOT }
+	s:STATE_MURCIA = { add_claim = ROOT }
+	s:STATE_LOWER_ANDALUSIA = { add_claim = ROOT }
+	s:STATE_UPPER_ANDALUSIA = { add_claim = ROOT }
+	s:STATE_BALEARIC_ISLANDS = { add_claim = ROOT }
+	s:STATE_BEIRA = { add_claim = ROOT }
+	s:STATE_ESTREMADURA = { add_claim = ROOT }
+	s:STATE_ALENTEJO = { add_claim = ROOT }
+	s:STATE_ENTRE_DOURO_E_MINHO = { add_claim = ROOT }
+}
+
+rome_add_britannia_claims = {
+	s:STATE_HOME_COUNTIES = { add_claim = ROOT }
+	s:STATE_LANCASHIRE = { add_claim = ROOT }
+	s:STATE_WALES = { add_claim = ROOT }
+	s:STATE_YORKSHIRE = { add_claim = ROOT }
+	s:STATE_MIDLANDS = { add_claim = ROOT }
+	s:STATE_EAST_ANGLIA = { add_claim = ROOT }
+	s:STATE_WEST_COUNTRY = { add_claim = ROOT }
+}
+
+rome_add_danube_claims = {
+	s:STATE_RHINELAND = { add_claim = ROOT }
+	s:STATE_TYROL = { add_claim = ROOT }
+	s:STATE_EAST_SWITZERLAND = { add_claim = ROOT }
+	s:STATE_WEST_SWITZERLAND = { add_claim = ROOT }
+	s:STATE_AUSTRIA = { add_claim = ROOT }
+	s:STATE_TRANSDANUBIA = { add_claim = ROOT }
+	s:STATE_BANAT = { add_claim = ROOT }
+	s:STATE_NORTHERN_TRANSYLVANIA = { add_claim = ROOT }
+	s:STATE_SOUTHERN_TRANSYLVANIA = { add_claim = ROOT }
+	s:STATE_WALLACHIA = { add_claim = ROOT }
+	s:STATE_MOLDAVIA = { add_claim = ROOT }
+	s:STATE_BUKOVINA = { add_claim = ROOT }
+	s:STATE_SOUTH_TYROL = { add_claim = ROOT }
+	s:STATE_STYRIA = { add_claim = ROOT }
+	s:STATE_DELVIDEK = { add_claim = ROOT }
+	s:STATE_CENTRAL_HUNGARY = { add_claim = ROOT }
+	s:STATE_BEKES = { add_claim = ROOT }
+	s:STATE_BESSARABIA = { add_claim = ROOT }
+	s:STATE_BADEN = { add_claim = ROOT }
+	s:STATE_WURTTEMBERG = { add_claim = ROOT }
+}
+
+### 稳固行省：整合所有已拥有但未整合的罗马领土 ###
+rome_integrate_roman_states = {
+	every_scope_state = {
+		limit = {
+			owner = ROOT
+			is_incorporated = no
+			OR = {
+				state_region = s:STATE_EASTERN_THRACE
+				state_region = s:STATE_WESTERN_THRACE
+				state_region = s:STATE_NORTHERN_THRACE
+				state_region = s:STATE_BULGARIA
+				state_region = s:STATE_DOBRUDJA
+				state_region = s:STATE_ALBANIA
+				state_region = s:STATE_MACEDONIA
+				state_region = s:STATE_SKOPIA
+				state_region = s:STATE_DALMATIA
+				state_region = s:STATE_CROATIA
+				state_region = s:STATE_SLAVONIA
+				state_region = s:STATE_ISTRIA
+				state_region = s:STATE_BOSNIA
+				state_region = s:STATE_MONTENEGRO
+				state_region = s:STATE_WESTERN_SERBIA
+				state_region = s:STATE_EASTERN_SERBIA
+				state_region = s:STATE_KOSOVO
+				state_region = s:STATE_SLOVENIA
+				state_region = s:STATE_ATTICA
+				state_region = s:STATE_THESSALIA
+				state_region = s:STATE_PELOPONNESE
+				state_region = s:STATE_IONIAN_ISLANDS
+				state_region = s:STATE_CRETE
+				state_region = s:STATE_WEST_AEGEAN_ISLANDS
+				state_region = s:STATE_EAST_AEGEAN_ISLANDS
+				state_region = s:STATE_HUDAVENDIGAR
+				state_region = s:STATE_AYDIN
+				state_region = s:STATE_KONYA
+				state_region = s:STATE_KASTAMONU
+				state_region = s:STATE_ANKARA
+				state_region = s:STATE_ADANA
+				state_region = s:STATE_TRABZON
+				state_region = s:STATE_ERZURUM
+				state_region = s:STATE_KARS
+				state_region = s:STATE_DIYARBAKIR
+				state_region = s:STATE_CYPRUS
+				state_region = s:STATE_PALESTINE
+				state_region = s:STATE_LEBANON
+				state_region = s:STATE_SYRIA
+				state_region = s:STATE_ALEPPO
+				state_region = s:STATE_TRANSJORDAN
+				state_region = s:STATE_BAGHDAD
+				state_region = s:STATE_MOSUL
+				state_region = s:STATE_DEIR_EZ_ZOR
+				state_region = s:STATE_BASRA
+				state_region = s:STATE_LOWER_EGYPT
+				state_region = s:STATE_MIDDLE_EGYPT
+				state_region = s:STATE_UPPER_EGYPT
+				state_region = s:STATE_SINAI
+				state_region = s:STATE_EGYPTIAN_DESERT
+				state_region = s:STATE_MATRUH
+				state_region = s:STATE_TRIPOLI
+				state_region = s:STATE_TUNISIA
+				state_region = s:STATE_ALGIERS
+				state_region = s:STATE_CONSTANTINE
+				state_region = s:STATE_ORAN
+				state_region = s:STATE_FEZ
+				state_region = s:STATE_MARRAKECH
+				state_region = s:STATE_AL_RIF
+				state_region = s:STATE_LIBYA
+				state_region = s:STATE_INNER_MOROCCO
+				state_region = s:STATE_LAZIO
+				state_region = s:STATE_UMBRIA
+				state_region = s:STATE_TUSCANY
+				state_region = s:STATE_ROMAGNA
+				state_region = s:STATE_EMILIA
+				state_region = s:STATE_VENETIA
+				state_region = s:STATE_LOMBARDY
+				state_region = s:STATE_PIEDMONT
+				state_region = s:STATE_SAVOY
+				state_region = s:STATE_ABRUZZO
+				state_region = s:STATE_CAMPANIA
+				state_region = s:STATE_APULIA
+				state_region = s:STATE_CALABRIA
+				state_region = s:STATE_SICILY
+				state_region = s:STATE_SARDINIA
+				state_region = s:STATE_CORSICA
+				state_region = s:STATE_MALTA
+				state_region = s:STATE_CATALONIA
+				state_region = s:STATE_ARAGON
+				state_region = s:STATE_VALENCIA
+				state_region = s:STATE_BASQUE_COUNTRY
+				state_region = s:STATE_OLD_CASTILE
+				state_region = s:STATE_NEW_CASTILE
+				state_region = s:STATE_LEON
+				state_region = s:STATE_ASTURIAS
+				state_region = s:STATE_GALICIA
+				state_region = s:STATE_EXTREMADURA
+				state_region = s:STATE_MURCIA
+				state_region = s:STATE_LOWER_ANDALUSIA
+				state_region = s:STATE_UPPER_ANDALUSIA
+				state_region = s:STATE_BALEARIC_ISLANDS
+				state_region = s:STATE_BEIRA
+				state_region = s:STATE_ESTREMADURA
+				state_region = s:STATE_ALENTEJO
+				state_region = s:STATE_ENTRE_DOURO_E_MINHO
+				state_region = s:STATE_ILE_DE_FRANCE
+				state_region = s:STATE_PROVENCE
+				state_region = s:STATE_NORMANDY
+				state_region = s:STATE_LANGUEDOC
+				state_region = s:STATE_RHONE
+				state_region = s:STATE_FRENCH_LOW_COUNTRIES
+				state_region = s:STATE_PICARDY
+				state_region = s:STATE_POITOU
+				state_region = s:STATE_GUYENNE
+				state_region = s:STATE_AQUITAINE
+				state_region = s:STATE_AUVERGNE_LIMOUSIN
+				state_region = s:STATE_BRITTANY
+				state_region = s:STATE_MAINE_ANJOU
+				state_region = s:STATE_BURGUNDY
+				state_region = s:STATE_CHAMPAGNE
+				state_region = s:STATE_FRANCHE_COMTE
+				state_region = s:STATE_ORLEANS
+				state_region = s:STATE_ALSACE_LORRAINE
+				state_region = s:STATE_LORRAINE
+				state_region = s:STATE_HOME_COUNTIES
+				state_region = s:STATE_LANCASHIRE
+				state_region = s:STATE_WALES
+				state_region = s:STATE_YORKSHIRE
+				state_region = s:STATE_MIDLANDS
+				state_region = s:STATE_EAST_ANGLIA
+				state_region = s:STATE_WEST_COUNTRY
+				state_region = s:STATE_RHINELAND
+				state_region = s:STATE_TYROL
+				state_region = s:STATE_EAST_SWITZERLAND
+				state_region = s:STATE_WEST_SWITZERLAND
+				state_region = s:STATE_AUSTRIA
+				state_region = s:STATE_TRANSDANUBIA
+				state_region = s:STATE_BANAT
+				state_region = s:STATE_NORTHERN_TRANSYLVANIA
+				state_region = s:STATE_SOUTHERN_TRANSYLVANIA
+				state_region = s:STATE_WALLACHIA
+				state_region = s:STATE_MOLDAVIA
+				state_region = s:STATE_BUKOVINA
+				state_region = s:STATE_SOUTH_TYROL
+				state_region = s:STATE_STYRIA
+				state_region = s:STATE_DELVIDEK
+				state_region = s:STATE_CENTRAL_HUNGARY
+				state_region = s:STATE_BEKES
+				state_region = s:STATE_BESSARABIA
+				state_region = s:STATE_BADEN
+				state_region = s:STATE_WURTTEMBERG
+				state_region = s:STATE_ARMENIA
+				state_region = s:STATE_CRIMEA
+				state_region = s:STATE_ELIZAVETPOL
+				state_region = s:STATE_AZERBAIJAN
+				state_region = s:STATE_DAGESTAN
+				state_region = s:STATE_NORTH_CAUCASUS
+				state_region = s:STATE_GREATER_CAUCASUS
+				state_region = s:STATE_STAVROPOL
+				state_region = s:STATE_KUBAN
+				state_region = s:STATE_HEDJAZ
+				state_region = s:STATE_NEJD
+				state_region = s:STATE_HAIL
+				state_region = s:STATE_OMAN
+				state_region = s:STATE_ABU_DHABI
+				state_region = s:STATE_YEMEN
+		}
+	}
+	set_state_type = incorporated
+}
+
+### 消除国家内所有激进派 ###
+rome_eliminate_radicals = {
+	# 对所有阶层、所有文化扣除大量激进派以清零
+	add_radicals = {
+		value = -1000000
+		strata = lower
+	}
+	add_radicals = {
+		value = -1000000
+		strata = middle
+	}
+	add_radicals = {
+		value = -1000000
+		strata = upper
+	}
+}

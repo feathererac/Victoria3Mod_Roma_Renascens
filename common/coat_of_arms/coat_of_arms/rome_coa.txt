@@ -1,0 +1,16 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - SPQR 纹章（国旗）
+# 使用 Roman_SPQR_banner.svg 转换的纹理（金色桂冠 + SPQR + 地中海）
+# 纹理：gfx/coat_of_arms/textured_emblems/te_rome_spqr_banner.dds
+# ============================================================
+
+SPQR = {
+	pattern = "pattern_solid.tga"
+	color1 = "purple"
+	color2 = "golden"
+
+	textured_emblem = {
+		texture = "te_rome_spqr_banner.dds"
+		instance = { scale = { 1.0 1.0 } position = { 0.5 0.5 } }
+	}
+}

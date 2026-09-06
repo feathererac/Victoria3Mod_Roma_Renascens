@@ -1,0 +1,169 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 静态修正定义
+# 注意：静态修正必须放在 common/static_modifiers/ 目录
+# ============================================================
+
+### 希腊觉醒：每周创新力+500且上限+500，持续10年 ###
+rome_innovation_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+    country_weekly_innovation_add = 500
+    country_weekly_innovation_max_add = 500
+}
+
+### 希腊觉醒：受教育机会+50%，永久 ###
+rome_literacy_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_education_access_add = 0.5
+}
+
+### 希腊觉醒：每周税收+50000，持续到重建东罗马 ###
+rome_greek_treasury_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+    country_tax_income_add = 50000
+}
+
+### 希腊觉醒完成：受教育机会+50% + 科技扩散+100%，永久 ###
+rome_literacy_tech_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_education_access_add = 0.5
+    country_tech_spread_add = 1.0
+    country_tech_spread_mult = 1.0
+}
+
+### 罗马火种：完整版 - 攻防+30/杀伤+30%/士气打击+30%，持续10年 ###
+rome_roman_spark = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+    unit_offense_add = 30
+    unit_defense_add = 30
+    unit_kill_rate_add = 0.3
+    unit_morale_damage_mult = 0.3
+}
+
+### 纪律严明的职业军队 - 攻防+10/杀伤+10%/士气打击+10%，永久 ###
+rome_professional_army = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+    unit_offense_add = 10
+    unit_defense_add = 10
+    unit_kill_rate_add = 0.1
+    unit_morale_damage_mult = 0.1
+}
+
+### 宁静的凯旋 - 恶名获取-90%，外交博弈行动力+600，永久 ###
+rome_tranquil_triumph = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_infamy_generation_mult = -0.9
+    country_diplomatic_play_maneuvers_add = 600
+}
+
+### 罗马和平 - 动乱效果-100%，用于整合领土后消除动乱影响 ###
+rome_pax_romana = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_turmoil_effects_mult = -1.0
+}
+
+### 万城之城 - 稳固行省最终奖励：合法性+20，行政力+5000 ###
+rome_eternal_city = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_legitimacy_base_add = 20
+    country_bureaucracy_add = 5000
+}
+
+### 元老院的智慧 - 三项改革全部立法后的永久奖励 ###
+rome_senate_reformed = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    country_bureaucracy_add = 5000
+    country_legitimacy_base_add = 30
+    country_law_enactment_success_add = 0.3
+    country_law_enactment_speed_mult = 0.2
+}
+
+### 重建中的罗马（基础）- 合并希腊金库+宁静的凯旋后稍削弱：税收/恶名/外交行动力 ###
+rome_rebuilding = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_tax_income_add = 50000
+    country_infamy_generation_mult = -0.7
+    country_diplomatic_play_maneuvers_add = 900
+}
+
+### 重建中的罗马（第二级·伊比利亚）：基础 + 贸易优势/贸易容量+25% ###
+rome_rebuilding_2 = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_tax_income_add = 50000
+    country_infamy_generation_mult = -0.7
+    country_diplomatic_play_maneuvers_add = 900
+    state_export_advantage_mult = 0.25
+    state_trade_capacity_mult = 0.25
+}
+
+### 重建中的罗马（第三级·多瑙河）：第二级 + 攻/防+20% ###
+rome_rebuilding_3 = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_tax_income_add = 50000
+    country_infamy_generation_mult = -0.7
+    country_diplomatic_play_maneuvers_add = 900
+    state_export_advantage_mult = 0.25
+    state_trade_capacity_mult = 0.25
+    unit_offense_mult = 0.2
+    unit_defense_mult = 0.2
+}
+
+### 重建中的罗马（第四级·高卢）：第三级 + 击杀/士气打击/康复/士气恢复+20% ###
+rome_rebuilding_4 = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_tax_income_add = 50000
+    country_infamy_generation_mult = -0.7
+    country_diplomatic_play_maneuvers_add = 900
+    state_export_advantage_mult = 0.25
+    state_trade_capacity_mult = 0.25
+    unit_offense_mult = 0.2
+    unit_defense_mult = 0.2
+    unit_kill_rate_add = 0.2
+    unit_morale_damage_mult = 0.2
+    unit_recovery_rate_add = 0.2
+    unit_morale_recovery_mult = 0.2
+}
+
+### 条条大路通罗马 - 点击不列颠（征服不列颠）后额外获得 ###
+rome_viae_romanae = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+    country_tax_income_add = 50000
+    state_conversion_mult = 0.4
+    state_assimilation_mult = 0.4
+    state_infrastructure_mult = 0.1
+    building_port_throughput_add = 0.1
+}
+
+### 奥古斯都 - 立法成功率+50% ###
+rome_augustus = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_law_enactment_success_add = 0.5
+}
+
+### 永恒罗马（Imperium Aeternum）- 掌握全部罗马疆域后的终极永久加成 ###
+rome_imperium_aeternum = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    # 行政与权威
+    country_bureaucracy_add = 5000
+    country_authority_add = 400
+    # 经济：税收 +50000
+    country_tax_income_add = 50000
+    # 军事：攻/防 +20%
+    unit_offense_mult = 0.2
+    unit_defense_mult = 0.2
+    # 击杀/士气打击/康复率/士气恢复 +20%
+    unit_kill_rate_add = 0.2
+    unit_morale_damage_mult = 0.2
+    unit_recovery_rate_add = 0.2
+    unit_morale_recovery_mult = 0.2
+    # 外交：恶名 -50%，外交博弈行动力 +900
+    country_infamy_generation_mult = -0.5
+    country_diplomatic_play_maneuvers_add = 900
+    # 科技：创新力 +400，创新力上限 +400
+    country_weekly_innovation_add = 400
+    country_weekly_innovation_max_add = 400
+    # 社会：动乱地区惩罚 -50%
+    state_turmoil_effects_mult = -0.5
+    # 贸易：贸易优势 +25%，贸易容量 +25%
+    state_export_advantage_mult = 0.25
+    state_trade_capacity_mult = 0.25
+}

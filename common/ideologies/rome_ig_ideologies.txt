@@ -1,0 +1,351 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 罗马化利益集团理念
+# 语法与原版 common/ideologies 一致：lawgroup 块 + 态度枚举
+# 挂载方式：on_action (rome_ig_ideology_check) 每月脉冲为 BYZ/SPQR
+# 的四大利益集团 add_ideology，使其真正"支持"（绿拇指）：
+#   罗马三级权力分配 / 罗马混合共和制 / 万民法
+# ============================================================
+
+# ------- 军队 → 罗马军团（Legiones Romanae）-------
+# 军官居于三级权力分配第一等级；万民法保障行省征兵
+ideology_rome_legions = {
+	icon = "gfx/interface/icons/ideology_icons/jingoist.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = strongly_approve
+		law_wealth_voting = approve
+		law_landed_voting = neutral
+		law_census_voting = neutral
+		law_autocracy = neutral
+		law_oligarchy = approve
+		law_technocracy = neutral
+		law_universal_suffrage = neutral
+		law_single_party_state = neutral
+		law_anarchy = disapprove
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = strongly_approve
+		law_monarchy = neutral
+		law_presidential_republic = neutral
+		law_parliamentary_republic = neutral
+		law_theocracy = disapprove
+		law_council_republic = disapprove
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = approve
+		law_ethnostate = disapprove
+		law_national_supremacy = neutral
+		law_subjecthood = neutral
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = neutral
+	}
+}
+
+# ------- 地主 → 元老院贵族（Ordo Senatorius）-------
+# 元老院权威依托三级权力分配；混合共和制保留贵族审议
+ideology_rome_senatorial = {
+	icon = "gfx/interface/icons/ideology_icons/paternalistic.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = strongly_approve
+		law_landed_voting = approve
+		law_wealth_voting = approve
+		law_oligarchy = strongly_approve
+		law_autocracy = neutral
+		law_census_voting = neutral
+		law_technocracy = neutral
+		law_universal_suffrage = disapprove
+		law_single_party_state = disapprove
+		law_anarchy = strongly_disapprove
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = strongly_approve
+		law_monarchy = approve
+		law_presidential_republic = neutral
+		law_parliamentary_republic = neutral
+		law_theocracy = disapprove
+		law_council_republic = strongly_disapprove
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = approve
+		law_ethnostate = neutral
+		law_national_supremacy = neutral
+		law_subjecthood = approve
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = neutral
+	}
+}
+
+# ------- 教廷 → 祭司团（Collegium Pontificum）-------
+# 罗马多神教天然包容；万民法接纳万族信仰
+ideology_rome_pontifices = {
+	icon = "gfx/interface/icons/ideology_icons/pious.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = strongly_approve
+		law_landed_voting = neutral
+		law_wealth_voting = neutral
+		law_census_voting = neutral
+		law_oligarchy = approve
+		law_autocracy = neutral
+		law_technocracy = neutral
+		law_universal_suffrage = disapprove
+		law_single_party_state = neutral
+		law_anarchy = disapprove
+		law_elder_council = approve
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = strongly_approve
+		law_monarchy = approve
+		law_theocracy = approve
+		law_presidential_republic = neutral
+		law_parliamentary_republic = neutral
+		law_council_republic = strongly_disapprove
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = strongly_approve
+		law_ethnostate = disapprove
+		law_national_supremacy = disapprove
+		law_subjecthood = neutral
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = approve
+	}
+}
+
+# ------- 实业家 → 骑士阶层（Ordo Equester）-------
+# 帝国的商贾、工程师与包税人；万民法保障行省经商
+ideology_rome_equestrian = {
+	icon = "gfx/interface/icons/ideology_icons/market_liberal.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = strongly_approve
+		law_wealth_voting = strongly_approve
+		law_census_voting = approve
+		law_technocracy = approve
+		law_landed_voting = neutral
+		law_oligarchy = neutral
+		law_autocracy = neutral
+		law_universal_suffrage = neutral
+		law_single_party_state = neutral
+		law_anarchy = strongly_disapprove
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = strongly_approve
+		law_monarchy = neutral
+		law_presidential_republic = approve
+		law_parliamentary_republic = approve
+		law_theocracy = disapprove
+		law_council_republic = strongly_disapprove
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = approve
+		law_ethnostate = disapprove
+		law_national_supremacy = disapprove
+		law_subjecthood = neutral
+		law_racial_segregation = disapprove
+		law_cultural_exclusion = neutral
+		law_multicultural = approve
+	}
+}
+
+# ============================================================
+# 以下4个理念仅通过「宣布重建罗马」按钮（或完成后的每月脉冲兜底）赋予
+# ============================================================
+
+# ------- 知识分子 → 雅典学院（Academia Atheniensis）-------
+ideology_rome_academia = {
+	icon = "gfx/interface/icons/ideology_icons/meritocratic.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = approve
+		law_technocracy = approve
+		law_universal_suffrage = approve
+		law_census_voting = neutral
+		law_wealth_voting = neutral
+		law_landed_voting = neutral
+		law_oligarchy = neutral
+		law_autocracy = neutral
+		law_single_party_state = neutral
+		law_anarchy = disapprove
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = approve
+		law_parliamentary_republic = approve
+		law_presidential_republic = neutral
+		law_monarchy = neutral
+		law_theocracy = disapprove
+		law_council_republic = neutral
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = strongly_approve
+		law_ethnostate = disapprove
+		law_national_supremacy = disapprove
+		law_subjecthood = neutral
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = approve
+	}
+}
+
+# ------- 工会 → 平民行会（Collegia Opificum）-------
+ideology_rome_collegia = {
+	icon = "gfx/interface/icons/ideology_icons/egalitarian.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = approve
+		law_universal_suffrage = approve
+		law_census_voting = approve
+		law_technocracy = neutral
+		law_wealth_voting = neutral
+		law_landed_voting = neutral
+		law_oligarchy = disapprove
+		law_autocracy = neutral
+		law_single_party_state = neutral
+		law_anarchy = disapprove
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = approve
+		law_council_republic = approve
+		law_parliamentary_republic = neutral
+		law_presidential_republic = neutral
+		law_monarchy = neutral
+		law_theocracy = disapprove
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = approve
+		law_ethnostate = disapprove
+		law_national_supremacy = disapprove
+		law_subjecthood = neutral
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = approve
+	}
+}
+
+# ------- 乡村民众 → 乡村平民（Plebs Rustica）-------
+ideology_rome_plebs_rustica = {
+	icon = "gfx/interface/icons/ideology_icons/agrarian.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = approve
+		law_universal_suffrage = approve
+		law_landed_voting = neutral
+		law_census_voting = neutral
+		law_wealth_voting = neutral
+		law_technocracy = neutral
+		law_oligarchy = neutral
+		law_autocracy = neutral
+		law_single_party_state = neutral
+		law_anarchy = neutral
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = approve
+		law_monarchy = neutral
+		law_parliamentary_republic = neutral
+		law_presidential_republic = neutral
+		law_theocracy = neutral
+		law_council_republic = neutral
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = approve
+		law_ethnostate = neutral
+		law_national_supremacy = neutral
+		law_subjecthood = neutral
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = neutral
+	}
+}
+
+# ------- 小市民 → 城市平民（Plebs Urbana）-------
+ideology_rome_plebs_urbana = {
+	icon = "gfx/interface/icons/ideology_icons/loyalist.dds"
+
+	lawgroup_distribution_of_power = {
+		law_byzantine_three_tier = approve
+		law_census_voting = approve
+		law_universal_suffrage = approve
+		law_wealth_voting = neutral
+		law_landed_voting = neutral
+		law_technocracy = neutral
+		law_oligarchy = neutral
+		law_autocracy = neutral
+		law_single_party_state = neutral
+		law_anarchy = disapprove
+		law_elder_council = neutral
+		law_organic_regulation = neutral
+	}
+
+	lawgroup_governance_principles = {
+		law_roman_mixed_republic = approve
+		law_monarchy = neutral
+		law_parliamentary_republic = approve
+		law_presidential_republic = neutral
+		law_theocracy = neutral
+		law_council_republic = neutral
+		law_corporate_state = neutral
+		law_social_monarchy = neutral
+		law_colonial_administration = neutral
+	}
+
+	lawgroup_citizenship = {
+		law_jus_gentium = approve
+		law_ethnostate = disapprove
+		law_national_supremacy = neutral
+		law_subjecthood = neutral
+		law_racial_segregation = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = approve
+	}
+}

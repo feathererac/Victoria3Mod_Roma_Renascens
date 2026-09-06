@@ -1,0 +1,281 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 国家议程日志条目
+# ============================================================
+
+### 重建罗马 - 点击后变为持续日志，授予「重建中的罗马」；全部罗马疆域到手后完成并授予「永恒罗马」 ###
+je_rome_declare_imperium = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+	}
+
+	possible = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+	}
+
+	# 点击按钮后并不消失，而是成为持续重建日志；只有当全部罗马疆域都掌握在手时才完成
+	complete = {
+		hidden_trigger = { rome_all_held = yes }
+	}
+
+	# 完成（全部疆域到手）：移除重建中的罗马各等级与条条大路通罗马，授予永恒罗马
+	on_complete = {
+		rome_remove_all_rebuilding_modifiers = yes
+		add_modifier = { name = rome_imperium_aeternum }
+	}
+
+	# 按钮：宣布重建罗马（一次性，点击后按钮因 rome_roman_redeclared_complete 变量而隐藏，日志保留）
+	scripted_button = je_rome_declare_imperium_button
+
+	weight = 200
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+### 稳固行省 - 整合罗马领土（全部领土整合完毕并点击最终整合后消失） ###
+je_rome_secure_provinces = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_secure_provinces_complete }
+	}
+
+	possible = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_secure_provinces_complete }
+	}
+
+	# 点击「最终整合」（要求 rome_all_held 且无未整合领土）后置位变量 → 议程完成消失
+	complete = {
+		hidden_trigger = { has_variable = rome_secure_provinces_complete }
+	}
+
+	scripted_button = je_rome_integrate_button
+	scripted_button = je_rome_final_integration_button
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+### 奥古斯都 - 分区宣称罗马西部领土（BYZ/SPQR 可见，加冕后完成消失） ###
+je_rome_augustus = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	# 点击「加冕奥古斯都」（所有地区宣称并征服）后置位变量 → 议程完成消失
+	complete = {
+		hidden_trigger = { has_variable = rome_augustus_complete }
+	}
+
+	scripted_button = je_rome_augustus_italy_button
+	scripted_button = je_rome_augustus_hispania_button
+	scripted_button = je_rome_augustus_danube_button
+	scripted_button = je_rome_augustus_gallia_button
+	scripted_button = je_rome_augustus_britannia_button
+	scripted_button = je_rome_augustus_final_button
+	scripted_button = je_rome_arabia_annex_button
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+### 元老院 - 三项改革全部完成后加冕并授予元老院buff（+5000行政力） ###
+je_rome_senate = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_senate_complete }
+	}
+
+	possible = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_senate_complete }
+	}
+
+	# 三项改革（混合共和制 / 三级权力分配 / 万民法）全部立法完成 → 议程完成
+	complete = {
+		hidden_trigger = {
+			has_law = law_type:law_roman_mixed_republic
+			has_law = law_type:law_byzantine_three_tier
+			has_law = law_type:law_jus_gentium
+		}
+	}
+
+	on_complete = {
+		add_modifier = { name = rome_senate_reformed }
+		set_variable = { name = rome_senate_complete }
+	}
+
+	scripted_button = je_rome_senate_button
+	scripted_button = je_rome_senate_three_tier_button
+	scripted_button = je_rome_senate_jus_gentium_button
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+### 我们的海 - 占位符（功能开发中） ###
+je_rome_mare_nostrum = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+	}
+
+	possible = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+### 希腊觉醒 - 科技启蒙与文化复兴 ###
+je_rome_greek_awakening = {
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+		NOT = { has_variable = rome_greek_awakening_completed }
+	}
+
+	possible = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+	}
+
+	immediate = {
+		add_modifier = {
+			name = rome_innovation_boost
+			months = 120
+		}
+		add_modifier = {
+			name = rome_literacy_boost
+		}
+		add_modifier = {
+			name = rome_greek_treasury_boost
+		}
+	}
+
+	complete = {
+		literacy_rate >= 0.7
+	}
+
+	on_complete = {
+		if = { limit = { has_modifier = rome_innovation_boost } remove_modifier = rome_innovation_boost }
+		if = { limit = { has_modifier = rome_literacy_boost } remove_modifier = rome_literacy_boost }
+		add_modifier = {
+			name = rome_literacy_tech_boost
+		}
+		set_variable = { name = rome_greek_awakening_completed }
+	}
+
+	scripted_button = je_rome_greek_awakening_loyalists_button
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+### 罗马火种 - 伟大理想时代点燃军团斗志（GRE/BYZ，点击按钮后完成消失） ###
+je_rome_roman_spark = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+		}
+		has_journal_entry = je_greek_nationalism
+		NOT = { has_variable = rome_roman_spark_taken }
+	}
+
+	possible = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+		}
+		has_journal_entry = je_greek_nationalism
+		NOT = { has_variable = rome_roman_spark_taken }
+	}
+
+	# 点击「点燃罗马火种」后置位变量 → 议程完成消失
+	complete = {
+		hidden_trigger = { has_variable = rome_roman_spark_taken }
+	}
+
+	scripted_button = je_rome_roman_spark_button
+
+	weight = 150
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

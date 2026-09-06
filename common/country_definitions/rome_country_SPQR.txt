@@ -1,0 +1,14 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 罗马帝国国家定义（原版格式）
+# 国家tag：SPQR（避免与罗马尼亚 ROM 冲突）
+# 注意：Vic3 国旗由 common/coat_of_arms 中的纹章定义决定，
+#       不使用 gfx/flags/*.svg
+# ============================================================
+
+SPQR = {
+	color = { 102 2 60 }
+	country_type = recognized
+	tier = empire
+	cultures = { roman greek }
+	capital = STATE_EASTERN_THRACE
+}

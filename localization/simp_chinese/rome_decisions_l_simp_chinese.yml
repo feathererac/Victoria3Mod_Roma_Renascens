@@ -1,0 +1,212 @@
+﻿l_simp_chinese:
+ rome_debug_grant_all:0 "调试：一键授予全部罗马领土"
+ rome_debug_grant_all_desc:0 "此决议将立即将所有罗马帝国领土授予当前国家并设为直辖州。仅供调试使用，正式发布前请删除本决议。"
+ rome_debug_grant_all_tooltip:0 "授予全部罗马领土"
+
+ rome_innovation_boost:0 "希腊学术复兴"
+ rome_innovation_boost_desc:0 "每周创新力+500"
+
+ rome_literacy_boost:0 "全民启蒙"
+ rome_literacy_boost_desc:0 "受教育机会+50%"
+
+ rome_roman_spark:0 "罗马火种"
+ rome_roman_spark_desc:0 "军团攻击+30，防御+30，杀伤率+30%，士气打击+30%（点燃后持续十年）"
+
+ rome_professional_army:0 "纪律严明的职业军队"
+ rome_professional_army_desc:0 "东罗马已然重建，军团已百炼成钢。虽然征服的狂热逐渐褪去，但严明的纪律和过硬的素质已成为军队的灵魂。"
+ rome_professional_army_mod:0 "纪律严明的职业军队"
+ rome_professional_army_mod_desc:0 "军团攻击+10，防御+10，杀伤率+10%，士气打击+10%"
+
+ rome.1.t:0 "我们已经重建东罗马了"
+ rome.1.desc:0 "经过浴血奋战，君士坦丁堡的城头再次升起了罗马的旗帜。东罗马帝国已经浴火重生，但这只是开始。整个地中海世界都曾是罗马的疆域，我们的使命远未完成。让我们彻底重建罗马帝国，让鹰旗再次照耀整个已知世界。"
+ rome.1.a:0 "彻底重建罗马帝国"
+
+ # ===== 重建罗马系列决议 =====
+ rome_tranquil_triumph:0 "宁静的凯旋"
+ rome_tranquil_triumph_desc:0 "罗马的扩张不再伴随着无尽的仇恨与恐惧。我们以宽仁治世，以威仪服人，让被征服者心甘情愿地臣服于罗马的荣光之下。"
+ rome_tranquil_triumph_tooltip:0 "获得永久修正：恶名获取-90%，外交博弈行动力+600"
+
+ rome_tranquil_triumph_mod:0 "宁静的凯旋"
+ rome_tranquil_triumph_mod_desc:0 "恶名获取-90%，外交博弈行动力+600"
+
+ rome_annex_aegean:0 "爱琴海明珠"
+ rome_annex_aegean_desc:0 "克里特岛与伊奥尼亚群岛自古以来便是希腊文明的珠宝。当我们的国力足够强盛时，这些岛屿理应回归祖国的怀抱。"
+ rome_annex_aegean_tooltip:0 "立即吞并克里特岛和伊奥尼亚群岛。"
+ rome_annex_aegean_requirements:0 "要求：国际地位达到次要政权或更高"
+
+ # ===== 国家议程：宣布重建罗马（最终） =====
+ je_rome_declare_imperium:0 "宣布重建罗马"
+ je_rome_declare_imperium_reason:0 "当鹰旗再度在博斯普鲁斯海峡的晨风中聚拢，当「元老院与罗马人民」之名重新在亿万人口中低语——古老而庄严的召唤已不可回避。\n\n点燃重建的烽火：我们的旗帜将化作罗马的鹰旗，众神重归万神殿，罗马人的血脉与认同将在四海之内苏醒。旧时代的两份馈赠——希腊的金库与凯旋的宁静——也将熔铸为「重建中的罗马」，在收复每一片故土的征程中愈发光辉；待帝国的全部疆土尽归鹰旗之下，重建方告圆满，「永恒罗马」的时代便随之降临。\n\n前提：我们已是拜占庭帝国。"
+
+ je_rome_declare_imperium_button:0 "宣布重建罗马"
+ je_rome_declare_imperium_button_desc:0 "升起罗马鹰旗，重建罗马帝国：旗帜与地图颜色重归罗马，主流文化与国教罗马化，诸利益集团归位。希腊金库与宁静的凯旋将熔铸为「重建中的罗马」，并随征服进程不断增强；全部疆土光复后，它将升华为「永恒罗马」。"
+
+ rome_imperium_aeternum:0 "永恒罗马（Imperium Aeternum）"
+ rome_imperium_aeternum_desc:0 "行政力+5000，权威力+400，赋税收入+50000，攻/防+20%，击杀率/士气打击/康复率/士气恢复+20%，恶名产生-50%，外交博弈行动力+900，创新力+400/创新力上限+400，动乱地区惩罚-50%，贸易优势+25%/贸易容量+25%。"
+
+ rome_rebuilding:0 "重建中的罗马"
+ rome_rebuilding_desc:0 "赋税收入+50000，恶名产生-70%，外交博弈行动力+900。随着奥古斯都议程逐次征服故土，这份增益会逐步增强。"
+ rome_rebuilding_2:0 "重建中的罗马"
+ rome_rebuilding_2_desc:0 "赋税收入+50000，恶名产生-70%，外交博弈行动力+900，贸易优势+25%，贸易容量+25%（已征服伊比利亚）。"
+ rome_rebuilding_3:0 "重建中的罗马"
+ rome_rebuilding_3_desc:0 "赋税收入+50000，恶名产生-70%，外交博弈行动力+900，贸易优势+25%/贸易容量+25%，攻/防+20%（已征服多瑙河）。"
+ rome_rebuilding_4:0 "重建中的罗马"
+ rome_rebuilding_4_desc:0 "赋税收入+50000，恶名产生-70%，外交博弈行动力+900，贸易优势+25%/贸易容量+25%，攻/防+20%，击杀率/士气打击/康复率/士气恢复+20%（已征服高卢）。"
+
+ rome_viae_romanae:0 "条条大路通罗马"
+ rome_viae_romanae_desc:0 "赋税收入+50000，皈依/同化速度+40%，基础设施+10%，港口吞吐量+10%。"
+
+ je_rome_arabia_annex_button:0 "吞并阿拉伯半岛"
+ je_rome_arabia_annex_button_desc:0 "以罗马帝国之威直接吞并整个阿拉伯半岛（汉志、内志、哈伊勒、阿曼、阿布扎比、也门），并将其完全整合。\n条件：已重建罗马且国际地位达到列强。一次性。"
+
+ # ===== 国家议程：罗马火种 =====
+ je_rome_roman_spark:0 "罗马火种"
+ je_rome_roman_spark_reason:0 "伟大理想的火焰已在海岸与山峦间点燃。军团的鹰徽沉睡已久，可百夫长的号角从未真正远去——在向君士坦丁堡进军之前，先让这颗火种燃成燎原之势。\n\n点燃火种：十年之内，军团将士战意高昂（攻击与防御+30，杀伤率与士气打击+30%），我们同时获得奥斯曼治下所有故土的宣称。待到东罗马浴火重生，火种将淬炼为「纪律严明的职业军队」。"
+ je_rome_roman_spark_button:0 "点燃罗马火种"
+ je_rome_roman_spark_button_desc:0 "获得「罗马火种」修正（攻击/防御+30，杀伤率与士气打击+30%，持续十年），并对奥斯曼境内所有故土获得宣称。"
+
+ # ===== 国家议程：稳固行省 =====
+ je_rome_secure_provinces:0 "稳固行省"
+ je_rome_secure_provinces_reason:0 "我们的疆域日益辽阔，但许多新征服的领土仍处于未整合状态。我们必须将这些土地彻底纳入帝国的统治体系，消除动乱，让法律与秩序普照每一寸土地。\n\n当存在已拥有但未整合的领土时，可点击「整合领土」将其纳入帝国统治。"
+
+ je_rome_integrate_button:0 "整合领土"
+ je_rome_integrate_button_desc:0 "将所有已拥有但未整合的罗马领土转化为完全整合状态，消除所有激进派，并在一年内消除地区动乱的负面影响。"
+
+ je_rome_final_integration_button:0 "最终整合"
+ je_rome_final_integration_button_desc:0 "所有罗马领土均已整合完毕。完成最终整合，授予永久性修正：政府合法性+20，行政力+5000。"
+
+ rome_pax_romana:0 "罗马和平"
+ rome_pax_romana_desc:0 "动乱效果-100%（持续1年）"
+
+ rome_eternal_city:0 "万城之城"
+ rome_eternal_city_desc:0 "政府合法性+20，行政力+5000"
+
+ # ===== 国家议程：奥古斯都 =====
+ je_rome_augustus:0 "奥古斯都"
+ je_rome_augustus_reason:0 "作为帝国的继承者，我们有权宣称故土的每一寸土地。通过逐步获取宣称并征服对应领土，最终将获得奥古斯都的尊号，让立法更加顺畅。每征服一处，「重建中的罗马」增益也会随之增强。\n\n宣称需按顺序获取：意大利→伊比利亚→多瑙河→高卢→不列颠。每个宣称必须征服后才能解锁下一个。"
+
+ je_rome_augustus_italy_button:0 "宣称意大利"
+ je_rome_augustus_italy_button_desc:0 "获取意大利地区所有故土的宣称。征服意大利后方可解锁下一个宣称。"
+
+ je_rome_augustus_hispania_button:0 "宣称伊比利亚"
+ je_rome_augustus_hispania_button_desc:0 "获取伊比利亚地区所有故土的宣称。征服伊比利亚后，「重建中的罗马」获得贸易优势+25%、贸易容量+25%，并解锁下一个宣称。"
+
+ je_rome_augustus_danube_button:0 "宣称多瑙河地区"
+ je_rome_augustus_danube_button_desc:0 "获取多瑙河地区所有故土的宣称。征服多瑙河地区后，「重建中的罗马」获得攻/防+20%，并解锁下一个宣称。"
+
+ je_rome_augustus_gallia_button:0 "宣称高卢"
+ je_rome_augustus_gallia_button_desc:0 "获取高卢地区所有故土的宣称。征服高卢后，「重建中的罗马」获得击杀率/士气打击/康复率/士气恢复+20%，并解锁下一个宣称。"
+
+ je_rome_augustus_britannia_button:0 "宣称不列颠"
+ je_rome_augustus_britannia_button_desc:0 "获取不列颠地区所有故土的宣称。征服不列颠后，额外获得永久修正「条条大路通罗马」，并解锁最终奖励。"
+
+ je_rome_augustus_final_button:0 "加冕奥古斯都"
+ je_rome_augustus_final_button_desc:0 "所有宣称领土均已征服。加冕为奥古斯都，授予永久性修正：立法成功率+50%。"
+
+ rome_augustus_mod:0 "奥古斯都"
+ rome_augustus_mod_desc:0 "立法成功率+50%"
+
+ rome_senate_reformed:0 "元老院的智慧（Senatus Auctoritas）"
+ rome_senate_reformed_desc:0 "行政力+5000，政府合法性+30，立法成功率+30%，制定法律速度+20%。"
+
+ # ===== 国家议程：元老院 =====
+ je_rome_senate:0 "元老院"
+ je_rome_senate_reason:0 "恢复元老院的荣光，让古老的智慧指引帝国前行。元老院掌握三项核心权力：确立帝国的治理原则，设计罗马特色的三级权力分配选举制度，以及颁布万民法以协调各民族关系。\n\n当所有非边缘利益集团的支持度均大于等于0时，可解锁「恢复罗马混合共和制」。随时可实施「罗马三级权力分配」和「万民法」。"
+
+ je_rome_senate_button:0 "恢复罗马混合共和制"
+ je_rome_senate_button_desc:0 "变更治理原则为罗马混合共和制：权威力+100，国家元首所属利益集团执政合法性+20，基于选票的合法性+20，政府规模限额+1。"
+
+ je_rome_senate_three_tier_button:0 "实施罗马三级权力分配"
+ je_rome_senate_three_tier_button_desc:0 "变更权力分配为罗马三级权力分配（选举制度）：权威力+100，贵族/教士/军官政治力量+100%，工程师/学者政治力量+33%，基于政府势力的合法性+60，投票财富门槛+10，基于选票的合法性+85，政府规模限额+1。军队、地主、教廷、实业家强烈支持。"
+
+ je_rome_senate_jus_gentium_button:0 "颁布万民法"
+ je_rome_senate_jus_gentium_button_desc:0 "变更公民权为万民法：大幅提升各文化接受度（主流文化+100，共享遗产+80，共享语言+80，传统+25），改善非接纳文化的政治力量与工资待遇，促进文化融合。"
+
+ # ===== 国家议程：我们的海（占位符） =====
+ je_rome_mare_nostrum:0 "我们的海"
+ je_rome_mare_nostrum_reason:0 "将整片地中海化为罗马的内湖，让罗马的舰队巡游于我们的海。\n\n该功能尚未实装，敬请期待后续更新。"
+
+ # ===== 新法律本地化（原版风格风味简介，效果由游戏自动列出）=====
+ law_roman_mixed_republic:0 "罗马混合共和制"
+ law_roman_mixed_republic_desc:0 "执政官、元老院与公民大会三者相衡，任何一方都无法独揽权柄。虽由元首临朝，国家的权柄却始终源于罗马古老的宪制传统。"
+
+ law_byzantine_three_tier:0 "罗马三级权力分配"
+ law_byzantine_three_tier_desc:0 "仿古罗马百官列序之制：贵族、教士与军官居于第一等级，学者与工程师次之，全体罗马公民居于第三等级，各依其职共享治权。"
+
+ # ===== 公民权法律本地化 =====
+ law_jus_gentium:0 "万民法"
+ law_jus_gentium_desc:0 "万民法乃罗马治理万邦之公法。无论生于何种民族，凡遵罗马律法者，皆可循阶而进，终为罗马公民——Civis Romanus sum。"
+
+ EFFECTS_ON_ACCEPTANCE_law_jus_gentium:0 "接纳度低的族群将面临诸多限制；随着接纳度提升，各族群将逐步获得完整的投票权、政治力量与同化之路，最终融入罗马的公民大家庭。"
+
+ # ===== 地区特质 =====
+ state_trait_rome_constantinople_trade:0 "君士坦丁堡贸易中枢"
+ state_trait_rome_constantinople_trade_desc:0 "市场介入度的地区价格影响+5%，贸易容量+25%"
+
+ # ===== 国家议程：希腊觉醒 =====
+ je_rome_greek_awakening:0 "希腊觉醒"
+ je_rome_greek_awakening_reason:0 "希腊，西方文明的摇篮，正迎来一场新的觉醒。古老的智慧与现代的科学相结合，将推动我们的国家走向辉煌。\n\n每周创新力+500（持续10年），受教育机会+50%（永久），每周税收+50000（持续到重建东罗马）。\n\n当全国识字率达到70%时，本议程自动完成，获得科技扩散加成。"
+
+ je_rome_greek_awakening_loyalists_button:0 "安抚民心"
+ je_rome_greek_awakening_loyalists_button_desc:0 "增加各阶层效忠派以稳定民心，防止因快速现代化引发的革命。（12个月冷却）"
+
+ # ===== 新增修正本地化 =====
+ rome_greek_treasury_boost:0 "希腊金库"
+ rome_greek_treasury_boost_desc:0 "每周税收收入+50000"
+
+ rome_literacy_tech_boost:0 "启蒙时代"
+ rome_literacy_tech_boost_desc:0 "受教育机会+50%，科技扩散+100%"
+
+ # ===== 罗马文化（roman）本地化 =====
+ roman:0 "罗马"
+
+ # ===== 罗马多神教本地化 =====
+ religio_romana:0 "罗马多神教"
+
+ # ===== 罗马化利益集团名称（仅SPQR：由 set_interest_group_name / on_enable 引用，不覆盖全局名） =====
+ ig_armed_forces_spqr:0 "罗马军团（Legiones Romanae）"
+ ig_landowners_spqr:0 "元老院阶层（Ordo Senatorius）"
+ ig_devout_spqr:0 "罗马祭司团（Collegium Pontificum）"
+ ig_industrialists_spqr:0 "骑士阶层（Ordo Equester）"
+ ig_intelligentsia_spqr:0 "雅典学院（Academia Atheniensis）"
+ ig_trade_unions_spqr:0 "平民行会（Collegia Opificum）"
+ ig_rural_folk_spqr:0 "乡村平民（Plebs Rustica）"
+ ig_petty_bourgeoisie_spqr:0 "城市平民（Plebs Urbana）"
+ ig_devout_rel_religio_romana:0 "罗马祭司团（Collegium Pontificum）"
+
+ # ===== 国教改信决议 =====
+ rome_restore_religio_romana:0 "重建罗马祭司团"
+ rome_restore_religio_romana_desc:0 "大祭司（Pontifex Maximus）重新执掌国柄，让朱庇特、玛尔斯与维纳斯的神殿再度香烟缭绕。正式确立罗马多神教为国教。"
+ rome_restore_religio_romana_tooltip:0 "将国教改为罗马多神教，统治者改宗罗马多神教。"
+
+ # ===== 新增：国家SPQR本地化 =====
+ SPQR:0 "罗马帝国"
+ SPQR_ADJ:0 "罗马的"
+ SPQR_DEF:0 "罗马帝国"
+ SPQR_PRE:0 "罗马帝国"
+ SPQR_NAME:0 "罗马帝国"
+
+ # ===== 新增：罗马化利益集团理念本地化（4个IG） =====
+ ideology_rome_legions:0 "罗马军团（Legiones Romanae）"
+ ideology_rome_legions_desc:0 "我们是永恒之城的军团。以鹰旗为誓，以纪律为骨，三级权力分配保障军人荣光，万民法让行省子弟皆为帝国而战。"
+
+ ideology_rome_senatorial:0 "元老院贵族（Ordo Senatorius）"
+ ideology_rome_senatorial_desc:0 "我们是罗马元老院的菁英。三级权力分配保障元老院权威，混合共和制延续贵族审议，万民法吸纳行省菁英。"
+
+ ideology_rome_pontifices:0 "祭司团（Collegium Pontificum）"
+ ideology_rome_pontifices_desc:0 "大祭司统领的罗马祭司团。朱庇特、玛尔斯与维纳斯与我们同在。信仰自由，文化包容，让所有神祇和平共处。"
+
+ ideology_rome_equestrian:0 "骑士阶层（Ordo Equester）"
+ ideology_rome_equestrian_desc:0 "我们是骑士阶层——帝国的商贾、工程师与包税人。三级权力分配与混合共和制维护秩序，万民法让地中海的每一个港口都飘扬罗马的商旗。"
+
+ ideology_rome_academia:0 "雅典学院（Academia Atheniensis）"
+ ideology_rome_academia_desc:0 "柏拉图的传人，亚里士多德的门徒。雅典学院拥抱理性与贤能政治，万民法让天下英才皆可为罗马所用。"
+
+ ideology_rome_collegia:0 "平民行会（Collegia Opificum）"
+ ideology_rome_collegia_desc:0 "罗马平民工匠组成的行会。三级权力分配赋予行会投票权，万民法保障迁徙与工作之权。"
+
+ ideology_rome_plebs_rustica:0 "乡村平民（Plebs Rustica）"
+ ideology_rome_plebs_rustica_desc:0 "乡村的罗马平民。作为第三等级的公民，我们以选票与劳作支撑帝国的根基。"
+
+ ideology_rome_plebs_urbana:0 "城市平民（Plebs Urbana）"
+ ideology_rome_plebs_urbana_desc:0 "罗马城中千千万万的小作坊主与工匠。面包与竞技场之外，我们更要公民的尊严——Civis Romanus sum。"

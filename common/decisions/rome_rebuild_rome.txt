@@ -1,0 +1,69 @@
+﻿# ============================================================
+# 罗马帝国重建MOD - 重建罗马系列决议
+# 持续存在直到玩家彻底重建罗马（拥有全部领土且已改为罗马国旗）
+# ============================================================
+
+### 选项一：宁静的凯旋 - 减少恶名+外交行动力 ###
+rome_tranquil_triumph = {
+	is_shown = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+		}
+		NOT = {
+			AND = {
+				c:BYZ ?= this
+				rome_all_held = yes
+			}
+		}
+		NOT = { has_variable = rome_tranquil_triumph_taken }
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		add_modifier = { name = rome_tranquil_triumph }
+		set_variable = { name = rome_tranquil_triumph_taken }
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+### 选项二：爱琴海明珠 - 吞并克里特和伊奥尼亚群岛 ###
+rome_annex_aegean = {
+	is_shown = {
+		OR = {
+			c:GRE ?= this
+			c:BYZ ?= this
+		}
+		NOT = {
+			AND = {
+				c:BYZ ?= this
+				rome_all_held = yes
+			}
+		}
+		NOT = { has_variable = rome_annex_aegean_taken }
+	}
+
+	possible = {
+		custom_tooltip = rome_annex_aegean_requirements
+		country_rank >= rank_value:minor_power
+	}
+
+	when_taken = {
+		# 吞并克里特岛（参考debug决议的成功语法）
+		s:STATE_CRETE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		# 吞并伊奥尼亚群岛
+		s:STATE_IONIAN_ISLANDS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		set_variable = { name = rome_annex_aegean_taken }
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+# 元老院与我们的海已重构为国家议程系统，见 journal_entries/rome_agenda_journal.txt
