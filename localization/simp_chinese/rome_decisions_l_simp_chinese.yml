@@ -70,23 +70,40 @@
  je_rome_secure_provinces_reason:0 "我们的疆域日益辽阔，但许多新征服的领土仍处于未整合状态。我们必须将这些土地彻底纳入帝国的统治体系，消除动乱，让法律与秩序普照每一寸土地。\n\n当存在已拥有但未整合的领土时，可点击「整合领土」将其纳入帝国统治。"
 
  je_rome_integrate_button:0 "整合领土"
- je_rome_integrate_button_desc:0 "将所有已拥有但未整合的罗马领土转化为完全整合状态，消除所有激进派，并在一年内消除地区动乱的负面影响。"
+ je_rome_integrate_button_desc:0 "将所有已拥有但未整合的罗马领土转化为完全整合状态，减少30%现有激进派、增加效忠派，并在一年内获得「罗马和平」：军事征服产生的激进派-50%、政治运动产生的激进派-25%、动乱效果-25%。"
 
  je_rome_final_integration_button:0 "最终整合"
  je_rome_final_integration_button_desc:0 "所有罗马领土均已整合完毕。完成最终整合，授予永久性修正：政府合法性+20，行政力+5000。"
 
  rome_pax_romana:0 "罗马和平"
- rome_pax_romana_desc:0 "动乱效果-100%（持续1年）"
+ rome_pax_romana_desc:0 "军事征服产生的激进派-50%，政治运动产生的激进派-25%，动乱效果-25%（持续1年）"
 
  rome_eternal_city:0 "万城之城"
  rome_eternal_city_desc:0 "政府合法性+20，行政力+5000"
 
  # ===== 国家议程：奥古斯都 =====
  je_rome_augustus:0 "奥古斯都"
- je_rome_augustus_reason:0 "作为帝国的继承者，我们有权宣称故土的每一寸土地。通过逐步获取宣称并征服对应领土，最终将获得奥古斯都的尊号，让立法更加顺畅。每征服一处，「重建中的罗马」增益也会随之增强。\n\n宣称需按顺序获取：意大利→伊比利亚→多瑙河→高卢→不列颠。每个宣称必须征服后才能解锁下一个。"
+ je_rome_augustus_reason:0 "作为帝国的继承者，我们有权宣称故土的每一寸土地。先吞并埃及与北非，再按顺序征服五大地理区域后，加冕为奥古斯都。\n\n可选阶段：[GetGeographicRegion('geographic_region_roman_egypt').GetName]、[GetGeographicRegion('geographic_region_roman_africa').GetName]。\n宣称顺序：[GetGeographicRegion('geographic_region_roman_italia').GetName]→[GetGeographicRegion('geographic_region_roman_hispania').GetName]→[GetGeographicRegion('geographic_region_roman_danube').GetName]→[GetGeographicRegion('geographic_region_roman_gallia').GetName]→[GetGeographicRegion('geographic_region_roman_britannia').GetName]。每个宣称必须征服后才能解锁下一个。\n\n将鼠标悬停在地名上可在地图上高亮对应区域。最终完整版图见：[GetGeographicRegion('geographic_region_roman_imperium').GetName]。"
+
+ # 奥古斯都状态描述（悬停高亮地理区域）
+ je_rome_augustus_status_egypt:0 "可选目标：吞并 [GetGeographicRegion('geographic_region_roman_egypt').GetName] —— 点击按钮直接获取。"
+ je_rome_augustus_status_africa:0 "可选目标：吞并 [GetGeographicRegion('geographic_region_roman_africa').GetName] —— 点击按钮直接获取。"
+ je_rome_augustus_status_italy:0 "点击「宣称意大利」获取 [GetGeographicRegion('geographic_region_roman_italia').GetName] 的宣称。"
+ je_rome_augustus_status_conquer_italy:0 "正在征服 [GetGeographicRegion('geographic_region_roman_italia').GetName] —— 控制全部领土后解锁下一个宣称。"
+ je_rome_augustus_status_conquer_hispania:0 "正在征服 [GetGeographicRegion('geographic_region_roman_hispania').GetName] —— 控制全部领土后解锁下一个宣称。"
+ je_rome_augustus_status_conquer_danube:0 "正在征服 [GetGeographicRegion('geographic_region_roman_danube').GetName] —— 控制全部领土后解锁下一个宣称。"
+ je_rome_augustus_status_conquer_gallia:0 "正在征服 [GetGeographicRegion('geographic_region_roman_gallia').GetName] —— 控制全部领土后解锁下一个宣称。"
+ je_rome_augustus_status_conquer_britannia:0 "正在征服 [GetGeographicRegion('geographic_region_roman_britannia').GetName] —— 控制全部领土后解锁最终加冕。"
+ je_rome_augustus_status_final:0 "全部领土已征服！点击「加冕奥古斯都」完成最终议程。"
 
  je_rome_augustus_italy_button:0 "宣称意大利"
  je_rome_augustus_italy_button_desc:0 "获取意大利地区所有故土的宣称。征服意大利后方可解锁下一个宣称。"
+
+ je_rome_augustus_egypt_button:0 "吞并东方行省"
+ je_rome_augustus_egypt_button_desc:0 "直接吞并整个东方行省：埃及（下埃及、中埃及、上埃及、西奈、埃及沙漠、马特鲁）+ 黎凡特（塞浦路斯、巴勒斯坦、黎巴嫩、叙利亚、阿勒颇、约旦）+ 美索不达米亚（巴格达、摩苏尔、代尔祖尔、巴士拉），全部设为直辖。"
+
+ je_rome_augustus_africa_button:0 "吞并北非"
+ je_rome_augustus_africa_button_desc:0 "直接吞并北非全部领土（的黎波里、突尼斯、阿尔及尔、君士坦丁、奥兰、非斯、马拉喀什、里夫、利比亚、内摩洛哥），设为直辖。"
 
  je_rome_augustus_hispania_button:0 "宣称伊比利亚"
  je_rome_augustus_hispania_button_desc:0 "获取伊比利亚地区所有故土的宣称。征服伊比利亚后，「重建中的罗马」获得贸易优势+25%、贸易容量+25%，并解锁下一个宣称。"
@@ -103,8 +120,8 @@
  je_rome_augustus_final_button:0 "加冕奥古斯都"
  je_rome_augustus_final_button_desc:0 "所有宣称领土均已征服。加冕为奥古斯都，授予永久性修正：立法成功率+50%。"
 
- rome_augustus_mod:0 "奥古斯都"
- rome_augustus_mod_desc:0 "立法成功率+50%"
+ rome_augustus:0 "奥古斯都"
+ rome_augustus_desc:0 "立法成功率+50%"
 
  rome_senate_reformed:0 "元老院的智慧（Senatus Auctoritas）"
  rome_senate_reformed_desc:0 "行政力+5000，政府合法性+30，立法成功率+30%，制定法律速度+20%。"
@@ -122,9 +139,11 @@
  je_rome_senate_jus_gentium_button:0 "颁布万民法"
  je_rome_senate_jus_gentium_button_desc:0 "变更公民权为万民法：大幅提升各文化接受度（主流文化+100，共享遗产+80，共享语言+80，传统+25），改善非接纳文化的政治力量与工资待遇，促进文化融合。"
 
- # ===== 国家议程：我们的海（占位符） =====
+ # ===== 国家议程：我们的海（辅助脱困） =====
  je_rome_mare_nostrum:0 "我们的海"
- je_rome_mare_nostrum_reason:0 "将整片地中海化为罗马的内湖，让罗马的舰队巡游于我们的海。\n\n该功能尚未实装，敬请期待后续更新。"
+ je_rome_mare_nostrum_reason:0 "地中海应是罗马的内湖，但岛屿与飞地常被列强据为筹码，使光复之路步履维艰。\n\n点击下方按钮，可直接获取当前奥古斯都阶段所需的全部地块（设为直辖），从而解锁下一阶段的宣称。若征战受阻、厌倦为一座小岛反复拉锯，这里便是破局之径。"
+ je_rome_mare_nostrum_button:0 "获取当前阶段地块"
+ je_rome_mare_nostrum_button_desc:0 "检测当前奥古斯都阶段，直接将对应地区的所有州区域授予我国并设为直辖，并立即推进至下一阶段。点击后该地区即被我方完全掌握，下一阶段宣称按钮随之解锁，重建中的罗马修正也会同步升级。"
 
  # ===== 新法律本地化（原版风格风味简介，效果由游戏自动列出）=====
  law_roman_mixed_republic:0 "罗马混合共和制"
@@ -210,3 +229,13 @@
 
  ideology_rome_plebs_urbana:0 "城市平民（Plebs Urbana）"
  ideology_rome_plebs_urbana_desc:0 "罗马城中千千万万的小作坊主与工匠。面包与竞技场之外，我们更要公民的尊严——Civis Romanus sum。"
+
+ # ===== 地理区域名称（悬停可高亮地图） =====
+ geographic_region_roman_egypt:0 "东方行省"
+ geographic_region_roman_africa:0 "阿非利加"
+ geographic_region_roman_italia:0 "意大利"
+ geographic_region_roman_hispania:0 "伊比利亚"
+ geographic_region_roman_danube:0 "莱茵-多瑙"
+ geographic_region_roman_gallia:0 "高卢"
+ geographic_region_roman_britannia:0 "不列颠"
+ geographic_region_roman_imperium:0 "罗马帝国全境"

@@ -1,0 +1,241 @@
+﻿l_english:
+ rome_debug_grant_all:0 "Debug: Grant All Roman Territory"
+ rome_debug_grant_all_desc:0 "This decision immediately grants all Roman Empire territory to the current country and sets them as incorporated states. For debugging only; remove before official release."
+ rome_debug_grant_all_tooltip:0 "Grant All Roman Territory"
+
+ rome_innovation_boost:0 "Greek Academic Renaissance"
+ rome_innovation_boost_desc:0 "+500 Innovation per week"
+
+ rome_literacy_boost:0 "Universal Enlightenment"
+ rome_literacy_boost_desc:0 "+50% Educational Opportunities"
+
+ rome_roman_spark:0 "Roman Spark"
+ rome_roman_spark_desc:0 "Army Offense +30, Defense +30, Kill Rate +30%, Morale Damage +30% (lasts 10 years after ignition)"
+
+ rome_professional_army:0 "Disciplined Professional Army"
+ rome_professional_army_desc:0 "Eastern Rome has been rebuilt, and the legions have been tempered in battle. Though the fervor of conquest fades, strict discipline and superior quality have become the soul of the army."
+ rome_professional_army_mod:0 "Disciplined Professional Army"
+ rome_professional_army_mod_desc:0 "Army Offense +10, Defense +10, Kill Rate +10%, Morale Damage +10%"
+
+ rome.1.t:0 "We Have Rebuilt Eastern Rome"
+ rome.1.desc:0 "After bloody battles, the Roman flag once again flies over the walls of Constantinople. The Eastern Roman Empire has been reborn from the ashes, but this is only the beginning. The entire Mediterranean world was once Roman territory, and our mission is far from complete. Let us fully rebuild the Roman Empire and let the eagle banner shine over the entire known world once more."
+ rome.1.a:0 "Fully Rebuild the Roman Empire"
+
+ # ===== Rebuild Rome Series Decisions =====
+ rome_tranquil_triumph:0 "Tranquil Triumph"
+ rome_tranquil_triumph_desc:0 "Roman expansion no longer brings endless hatred and fear. We rule with benevolence and awe, letting the conquered willingly submit to Rome's glory."
+ rome_tranquil_triumph_tooltip:0 "Permanent modifier: Infamy gain -90%, Diplomatic Maneuver Action Points +600"
+
+ rome_tranquil_triumph_mod:0 "Tranquil Triumph"
+ rome_tranquil_triumph_mod_desc:0 "Infamy gain -90%, Diplomatic Maneuver Action Points +600"
+
+ rome_annex_aegean:0 "Pearl of the Aegean"
+ rome_annex_aegean_desc:0 "Crete and the Ionian Islands have been jewels of Greek civilization since ancient times. When our nation is strong enough, these islands should return to the motherland."
+ rome_annex_aegean_tooltip:0 "Immediately annex Crete and the Ionian Islands."
+ rome_annex_aegean_requirements:0 "Requires: International rank of Minor Power or higher"
+
+ # ===== National Agenda: Declare Rebuilding of Rome (Final) =====
+ je_rome_declare_imperium:0 "Declare the Rebuilding of Rome"
+ je_rome_declare_imperium_reason:0 "When the eagle banners gather once more in the morning breeze of the Bosphorus, when the name 'Senatus Populusque Romanus' is whispered again among millions—the ancient and solemn call can no longer be ignored.\n\nIgnite the fires of rebuilding: our flag shall become Rome's eagle banner, the gods shall return to the Pantheon, and Roman blood and identity shall awaken across the seas. The two gifts of the old era—the Greek treasury and the tranquil triumph—shall be forged into 'Rome Reborn,' growing ever brighter in the journey to reclaim every ancestral land; when all imperial territory is under the eagle banner, the rebuilding shall be complete, and the era of 'Eternal Rome' shall dawn.\n\nPrerequisite: We are already the Byzantine Empire."
+
+ je_rome_declare_imperium_button:0 "Declare the Rebuilding of Rome"
+ je_rome_declare_imperium_button_desc:0 "Raise the Roman eagle banner and rebuild the Roman Empire: flag and map color return to Rome, primary culture and state religion become Roman, interest groups align. The Greek treasury and Tranquil Triumph shall be forged into 'Rome Reborn,' growing stronger with each conquest; after all territory is reclaimed, it shall ascend to 'Eternal Rome.'"
+
+ rome_imperium_aeternum:0 "Eternal Rome (Imperium Aeternum)"
+ rome_imperium_aeternum_desc:0 "Bureaucracy +5000, Authority +400, Tax Income +50000, Offense/Defense +20%, Kill Rate/Morale Damage/Recovery Rate/Morale Recovery +20%, Infamy generation -50%, Diplomatic Maneuver Action Points +900, Innovation +400/Innovation Cap +400, Turmoil penalty -50%, Trade Advantage +25%/Trade Capacity +25%."
+
+ rome_rebuilding:0 "Rome Reborn"
+ rome_rebuilding_desc:0 "Tax Income +50000, Infamy generation -70%, Diplomatic Maneuver Action Points +900. This bonus grows stronger as the Augustus agenda conquers ancestral lands one by one."
+ rome_rebuilding_2:0 "Rome Reborn"
+ rome_rebuilding_2_desc:0 "Tax Income +50000, Infamy generation -70%, Diplomatic Maneuver Action Points +900, Trade Advantage +25%, Trade Capacity +25% (Iberia conquered)."
+ rome_rebuilding_3:0 "Rome Reborn"
+ rome_rebuilding_3_desc:0 "Tax Income +50000, Infamy generation -70%, Diplomatic Maneuver Action Points +900, Trade Advantage +25%/Trade Capacity +25%, Offense/Defense +20% (Danube conquered)."
+ rome_rebuilding_4:0 "Rome Reborn"
+ rome_rebuilding_4_desc:0 "Tax Income +50000, Infamy generation -70%, Diplomatic Maneuver Action Points +900, Trade Advantage +25%/Trade Capacity +25%, Offense/Defense +20%, Kill Rate/Morale Damage/Recovery Rate/Morale Recovery +20% (Gaul conquered)."
+
+ rome_viae_romanae:0 "All Roads Lead to Rome"
+ rome_viae_romanae_desc:0 "Tax Income +50000, Conversion/Assimilation Speed +40%, Infrastructure +10%, Port Throughput +10%."
+
+ je_rome_arabia_annex_button:0 "Annex the Arabian Peninsula"
+ je_rome_arabia_annex_button_desc:0 "Directly annex the entire Arabian Peninsula (Hejaz, Najd, Ha'il, Oman, Abu Dhabi, Yemen) with the might of the Roman Empire and fully integrate it.\nConditions: Rome rebuilt and international rank of Great Power. One-time."
+
+ # ===== National Agenda: Roman Spark =====
+ je_rome_roman_spark:0 "Roman Spark"
+ je_rome_roman_spark_reason:0 "The flame of a great ideal has been ignited among coasts and mountains. The legion's eagle standard has long slumbered, but the centurion's horn has never truly faded—before marching on Constantinople, let this spark become a raging fire.\n\nIgnite the spark: for ten years, legion soldiers fight with high morale (Offense and Defense +30, Kill Rate and Morale Damage +30%), and we gain claims on all ancestral lands under Ottoman rule. When Eastern Rome is reborn from the ashes, the spark will be tempered into a 'Disciplined Professional Army.'"
+ je_rome_roman_spark_button:0 "Ignite the Roman Spark"
+ je_rome_roman_spark_button_desc:0 "Gain the 'Roman Spark' modifier (Offense/Defense +30, Kill Rate and Morale Damage +30%, lasts 10 years) and gain claims on all ancestral lands within the Ottoman Empire."
+
+ # ===== National Agenda: Secure the Provinces =====
+ je_rome_secure_provinces:0 "Secure the Provinces"
+ je_rome_secure_provinces_reason:0 "Our territory grows ever vast, but many newly conquered lands remain unintegrated. We must fully incorporate these lands into the empire's ruling system, eliminate turmoil, and let law and order shine over every inch of soil.\n\nWhen there is owned but unintegrated territory, click 'Integrate Territory' to bring it under imperial rule."
+
+ je_rome_integrate_button:0 "Integrate Territory"
+ je_rome_integrate_button_desc:0 "Convert all owned but unintegrated Roman territory to fully integrated status, reduce existing radicals by 30% and add loyalists, and gain 'Pax Romana' for one year: Radicals from conquest -50%, Radicals from political movements -25%, Turmoil effects -25%."
+
+ je_rome_final_integration_button:0 "Final Integration"
+ je_rome_final_integration_button_desc:0 "All Roman territory has been integrated. Complete the final integration and grant permanent modifier: Government Legitimacy +20, Bureaucracy +5000."
+
+ rome_pax_romana:0 "Pax Romana"
+ rome_pax_romana_desc:0 "Radicals from conquest -50%, Radicals from political movements -25%, Turmoil effects -25% (lasts 1 year)"
+
+ rome_eternal_city:0 "The Eternal City"
+ rome_eternal_city_desc:0 "Government Legitimacy +20, Bureaucracy +5000"
+
+ # ===== National Agenda: Augustus =====
+ je_rome_augustus:0 "Augustus"
+ je_rome_augustus_reason:0 "As heirs to the empire, we have the right to claim every inch of ancestral land. First annex Egypt and Africa, then conquer five geographic regions in order to be coronated as Augustus.\n\nOptional stages: [GetGeographicRegion('geographic_region_roman_egypt').GetName], [GetGeographicRegion('geographic_region_roman_africa').GetName].\nClaims must be acquired in order: [GetGeographicRegion('geographic_region_roman_italia').GetName] -> [GetGeographicRegion('geographic_region_roman_hispania').GetName] -> [GetGeographicRegion('geographic_region_roman_danube').GetName] -> [GetGeographicRegion('geographic_region_roman_gallia').GetName] -> [GetGeographicRegion('geographic_region_roman_britannia').GetName]. Each claim must be conquered before the next unlocks.\n\nHover over a region name to highlight it on the map. Final imperial territory: [GetGeographicRegion('geographic_region_roman_imperium').GetName]."
+
+ # Augustus status descriptions (hover to highlight geographic regions)
+ je_rome_augustus_status_egypt:0 "Optional: Annex [GetGeographicRegion('geographic_region_roman_egypt').GetName] — click the button to acquire directly."
+ je_rome_augustus_status_africa:0 "Optional: Annex [GetGeographicRegion('geographic_region_roman_africa').GetName] — click the button to acquire directly."
+ je_rome_augustus_status_italy:0 "Click 'Claim Italia' to gain claims on [GetGeographicRegion('geographic_region_roman_italia').GetName]."
+ je_rome_augustus_status_conquer_italy:0 "Conquering [GetGeographicRegion('geographic_region_roman_italia').GetName] — control all territories to unlock the next claim."
+ je_rome_augustus_status_conquer_hispania:0 "Conquering [GetGeographicRegion('geographic_region_roman_hispania').GetName] — control all territories to unlock the next claim."
+ je_rome_augustus_status_conquer_danube:0 "Conquering [GetGeographicRegion('geographic_region_roman_danube').GetName] — control all territories to unlock the next claim."
+ je_rome_augustus_status_conquer_gallia:0 "Conquering [GetGeographicRegion('geographic_region_roman_gallia').GetName] — control all territories to unlock the next claim."
+ je_rome_augustus_status_conquer_britannia:0 "Conquering [GetGeographicRegion('geographic_region_roman_britannia').GetName] — control all territories to unlock the final coronation."
+ je_rome_augustus_status_final:0 "All territories conquered! Click 'Coronate Augustus' to complete the final agenda."
+
+ je_rome_augustus_italy_button:0 "Claim Italia"
+ je_rome_augustus_italy_button_desc:0 "Gain claims on all ancestral lands in Italia. Conquer Italia to unlock the next claim."
+
+ je_rome_augustus_egypt_button:0 "Annex Eastern Provinces"
+ je_rome_augustus_egypt_button_desc:0 "Directly annex the entire Eastern Provinces: Egypt (Lower Egypt, Middle Egypt, Upper Egypt, Sinai, Egyptian Desert, Matruh) + Levant (Cyprus, Palestine, Lebanon, Syria, Aleppo, Transjordan) + Mesopotamia (Baghdad, Mosul, Deir ez-Zor, Basra) as incorporated states."
+
+ je_rome_augustus_africa_button:0 "Annex Africa"
+ je_rome_augustus_africa_button_desc:0 "Directly annex all North African territories (Tripoli, Tunisia, Algiers, Constantine, Oran, Fez, Marrakech, Rif, Libya, Inner Morocco) as incorporated states."
+
+ je_rome_augustus_hispania_button:0 "Claim Iberia"
+ je_rome_augustus_hispania_button_desc:0 "Gain claims on all ancestral lands in Iberia. After conquering Iberia, 'Rome Reborn' gains Trade Advantage +25%, Trade Capacity +25%, and unlocks the next claim."
+
+ je_rome_augustus_danube_button:0 "Claim the Danube Region"
+ je_rome_augustus_danube_button_desc:0 "Gain claims on all ancestral lands in the Danube region. After conquering the Danube region, 'Rome Reborn' gains Offense/Defense +20%, and unlocks the next claim."
+
+ je_rome_augustus_gallia_button:0 "Claim Gaul"
+ je_rome_augustus_gallia_button_desc:0 "Gain claims on all ancestral lands in Gaul. After conquering Gaul, 'Rome Reborn' gains Kill Rate/Morale Damage/Recovery Rate/Morale Recovery +20%, and unlocks the next claim."
+
+ je_rome_augustus_britannia_button:0 "Claim Britannia"
+ je_rome_augustus_britannia_button_desc:0 "Gain claims on all ancestral lands in Britannia. After conquering Britannia, additionally gain the permanent modifier 'All Roads Lead to Rome,' and unlock the final reward."
+
+ je_rome_augustus_final_button:0 "Coronate Augustus"
+ je_rome_augustus_final_button_desc:0 "All claimed territories have been conquered. Be coronated as Augustus, granting permanent modifier: Law Pass Chance +50%."
+
+ rome_augustus:0 "Augustus"
+ rome_augustus_desc:0 "Law Pass Chance +50%"
+
+ rome_senate_reformed:0 "Wisdom of the Senate (Senatus Auctoritas)"
+ rome_senate_reformed_desc:0 "Bureaucracy +5000, Government Legitimacy +30, Law Pass Chance +30%, Law Enactment Speed +20%."
+
+ # ===== National Agenda: The Senate =====
+ je_rome_senate:0 "The Senate"
+ je_rome_senate_reason:0 "Restore the glory of the Senate, letting ancient wisdom guide the empire forward. The Senate holds three core powers: establishing the empire's governance principles, designing Rome's unique three-tier power distribution electoral system, and enacting the Jus Gentium to coordinate relations among all peoples.\n\nWhen all non-marginalized interest groups have support >= 0, 'Restore the Roman Mixed Republic' can be unlocked. 'Roman Three-Tier Power Distribution' and 'Jus Gentium' can be implemented at any time."
+
+ je_rome_senate_button:0 "Restore the Roman Mixed Republic"
+ je_rome_senate_button_desc:0 "Change governance principle to Roman Mixed Republic: Authority +100, Ruling Interest Group Legitimacy +20, Ballot-based Legitimacy +20, Government Size Cap +1."
+
+ je_rome_senate_three_tier_button:0 "Implement Roman Three-Tier Power Distribution"
+ je_rome_senate_three_tier_button_desc:0 "Change power distribution to Roman Three-Tier Power Distribution (electoral system): Authority +100, Aristocrats/Clergy/Officers Political Strength +100%, Engineers/Academics Political Strength +33%, Government Power-based Legitimacy +60, Wealth Voting Threshold +10, Ballot-based Legitimacy +85, Government Size Cap +1. Army, Landowners, Church, Industrialists strongly support."
+
+ je_rome_senate_jus_gentium_button:0 "Enact the Jus Gentium"
+ je_rome_senate_jus_gentium_button_desc:0 "Change citizenship to Jus Gentium: greatly increase cultural acceptance (Primary Culture +100, Shared Heritage +80, Shared Language +80, Traditional +25), improve political strength and wages of non-accepted cultures, promote cultural integration."
+
+ # ===== National Agenda: Our Sea (Assistance Tool) =====
+ je_rome_mare_nostrum:0 "Our Sea"
+ je_rome_mare_nostrum_reason:0 "The Mediterranean should be Rome's inland sea, but islands and enclaves are often held by great powers as bargaining chips, making the path of restoration arduous.\n\nClick the button below to directly acquire all territories needed for the current Augustus stage (set as incorporated), thereby unlocking the next stage's claim. If you are stalled in war or weary of fighting back and forth over a single island, this is your way through."
+ je_rome_mare_nostrum_button:0 "Acquire Current Stage Territories"
+ je_rome_mare_nostrum_button_desc:0 "Detects the current Augustus stage and directly grants all state regions in the corresponding region to our country as incorporated, instantly advancing to the next stage. After clicking, the region will be fully under our control, the next stage claim button will be unlocked, and the Rome Reborn modifier will be upgraded accordingly."
+
+ # ===== New Law Localization (vanilla-style flavor description, effects auto-listed by game) =====
+ law_roman_mixed_republic:0 "Roman Mixed Republic"
+ law_roman_mixed_republic_desc:0 "Consuls, Senate, and Popular Assembly balance each other; none can monopolize power. Though the Princeps reigns, the state's authority always stems from Rome's ancient constitutional traditions."
+
+ law_byzantine_three_tier:0 "Roman Three-Tier Power Distribution"
+ law_byzantine_three_tier_desc:0 "Modeled on the ancient Roman cursus honorum: Aristocrats, Clergy, and Officers form the first tier, Academics and Engineers the second, and all Roman citizens the third—each sharing rule according to their station."
+
+ # ===== Citizenship Law Localization =====
+ law_jus_gentium:0 "Jus Gentium"
+ law_jus_gentium_desc:0 "The Jus Gentium is Rome's public law for governing all peoples. No matter what nation one is born into, all who abide by Roman law may rise through the ranks and ultimately become Roman citizens—Civis Romanus sum."
+
+ EFFECTS_ON_ACCEPTANCE_law_jus_gentium:0 "Groups with low acceptance will face many restrictions; as acceptance increases, each group will gradually gain full voting rights, political strength, and a path to assimilation, ultimately integrating into Rome's citizen family."
+
+ # ===== State Traits =====
+ state_trait_rome_constantinople_trade:0 "Constantinople Trade Hub"
+ state_trait_rome_constantinople_trade_desc:0 "Market Access regional price impact +5%, Trade Capacity +25%"
+
+ # ===== National Agenda: Greek Awakening =====
+ je_rome_greek_awakening:0 "Greek Awakening"
+ je_rome_greek_awakening_reason:0 "Greece, the cradle of Western civilization, is welcoming a new awakening. Ancient wisdom combined with modern science will propel our nation toward glory.\n\n+500 Innovation per week (lasts 10 years), +50% Educational Opportunities (permanent), +50000 Tax per week (until Eastern Rome is rebuilt).\n\nWhen national literacy reaches 70%, this agenda completes automatically, gaining technology spread bonuses."
+
+ je_rome_greek_awakening_loyalists_button:0 "Pacify the Populace"
+ je_rome_greek_awakening_loyalists_button_desc:0 "Increase loyalists across all strata to stabilize the populace and prevent revolution from rapid modernization. (12-month cooldown)"
+
+ # ===== New Modifier Localization =====
+ rome_greek_treasury_boost:0 "Greek Treasury"
+ rome_greek_treasury_boost_desc:0 "+50000 Tax Income per week"
+
+ rome_literacy_tech_boost:0 "Age of Enlightenment"
+ rome_literacy_tech_boost_desc:0 "+50% Educational Opportunities, +100% Technology Spread"
+
+ # ===== Roman Culture (roman) Localization =====
+ roman:0 "Roman"
+
+ # ===== Roman Polytheism Localization =====
+ religio_romana:0 "Roman Polytheism"
+
+ # ===== Romanized Interest Group Names (SPQR only: referenced by set_interest_group_name / on_enable, do not override global names) =====
+ ig_armed_forces_spqr:0 "Roman Legions (Legiones Romanae)"
+ ig_landowners_spqr:0 "Senatorial Order (Ordo Senatorius)"
+ ig_devout_spqr:0 "Roman College of Pontiffs (Collegium Pontificum)"
+ ig_industrialists_spqr:0 "Equestrian Order (Ordo Equester)"
+ ig_intelligentsia_spqr:0 "Athenian Academy (Academia Atheniensis)"
+ ig_trade_unions_spqr:0 "Artisans' Guilds (Collegia Opificum)"
+ ig_rural_folk_spqr:0 "Rural Plebeians (Plebs Rustica)"
+ ig_petty_bourgeoisie_spqr:0 "Urban Plebeians (Plebs Urbana)"
+ ig_devout_rel_religio_romana:0 "Roman College of Pontiffs (Collegium Pontificum)"
+
+ # ===== State Religion Conversion Decision =====
+ rome_restore_religio_romana:0 "Restore the Roman College of Pontiffs"
+ rome_restore_religio_romana_desc:0 "The Pontifex Maximus once again holds the reins of state, letting the temples of Jupiter, Mars, and Venus burn incense once more. Officially establish Roman Polytheism as the state religion."
+ rome_restore_religio_romana_tooltip:0 "Change state religion to Roman Polytheism, ruler converts to Roman Polytheism."
+
+ # ===== New: SPQR Country Localization =====
+ SPQR:0 "Roman Empire"
+ SPQR_ADJ:0 "Roman"
+ SPQR_DEF:0 "the Roman Empire"
+ SPQR_PRE:0 "Roman Empire"
+ SPQR_NAME:0 "Roman Empire"
+
+ # ===== New: Romanized Interest Group Ideology Localization (4 IGs) =====
+ ideology_rome_legions:0 "Roman Legions (Legiones Romanae)"
+ ideology_rome_legions_desc:0 "We are the legions of the Eternal City. Sworn to the eagle banner, disciplined to the bone, the three-tier power distribution safeguards military glory, and the Jus Gentium lets provincial sons fight for the empire."
+
+ ideology_rome_senatorial:0 "Senatorial Aristocracy (Ordo Senatorius)"
+ ideology_rome_senatorial_desc:0 "We are the elite of the Roman Senate. The three-tier power distribution safeguards senatorial authority, the mixed republic continues aristocratic deliberation, and the Jus Gentium absorbs provincial elites."
+
+ ideology_rome_pontifices:0 "College of Pontiffs (Collegium Pontificum)"
+ ideology_rome_pontifices_desc:0 "The Roman College of Pontiffs led by the Pontifex Maximus. Jupiter, Mars, and Venus are with us. Freedom of belief, cultural tolerance, let all gods coexist in peace."
+
+ ideology_rome_equestrian:0 "Equestrian Order (Ordo Equester)"
+ ideology_rome_equestrian_desc:0 "We are the equestrian order—the empire's merchants, engineers, and tax farmers. The three-tier power distribution and mixed republic maintain order, and the Jus Gentium lets every port of the Mediterranean fly Rome's merchant flag."
+
+ ideology_rome_academia:0 "Athenian Academy (Academia Atheniensis)"
+ ideology_rome_academia_desc:0 "Heirs of Plato, disciples of Aristotle. The Athenian Academy embraces reason and meritocracy, and the Jus Gentium lets all talents under heaven serve Rome."
+
+ ideology_rome_collegia:0 "Artisans' Guilds (Collegia Opificum)"
+ ideology_rome_collegia_desc:0 "Guilds of Roman plebeian artisans. The three-tier power distribution grants guilds voting rights, and the Jus Gentium guarantees the right to migrate and work."
+
+ ideology_rome_plebs_rustica:0 "Rural Plebeians (Plebs Rustica)"
+ ideology_rome_plebs_rustica_desc:0 "Rural Roman plebeians. As third-tier citizens, we support the empire's foundations with our votes and labor."
+
+ ideology_rome_plebs_urbana:0 "Urban Plebeians (Plebs Urbana)"
+ ideology_rome_plebs_urbana_desc:0 "The countless small workshop owners and artisans of Rome. Beyond bread and circuses, we demand the dignity of citizenship—Civis Romanus sum."
+
+ # ===== Geographic Region Names (hover to highlight on map) =====
+ geographic_region_roman_egypt:0 "Eastern Provinces"
+ geographic_region_roman_africa:0 "Africa"
+ geographic_region_roman_italia:0 "Italia"
+ geographic_region_roman_hispania:0 "Hispania"
+ geographic_region_roman_danube:0 "Rhine-Danube"
+ geographic_region_roman_gallia:0 "Gallia"
+ geographic_region_roman_britannia:0 "Britannia"
+ geographic_region_roman_imperium:0 "Roman Imperium"

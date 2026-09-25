@@ -55,10 +55,12 @@ rome_tranquil_triumph = {
     country_diplomatic_play_maneuvers_add = 600
 }
 
-### 罗马和平 - 动乱效果-100%，用于整合领土后消除动乱影响 ###
+### 罗马和平 - 整合领土后一年内：减少征服/政治运动产生的激进派，温和降低动乱 ###
 rome_pax_romana = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_turmoil_effects_mult = -1.0
+    country_radicals_from_conquest_mult = -0.50
+    state_radicals_from_political_movements_mult = -0.25
+    state_turmoil_effects_mult = -0.25
 }
 
 ### 万城之城 - 稳固行省最终奖励：合法性+20，行政力+5000 ###

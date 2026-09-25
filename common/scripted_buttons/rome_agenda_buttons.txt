@@ -75,7 +75,7 @@ je_rome_integrate_button = {
 
 	effect = {
 		rome_integrate_roman_states = yes
-		rome_eliminate_radicals = yes
+		rome_reduce_radicals = yes
 		add_loyalists = { value = 1000000 strata = lower }
 		add_loyalists = { value = 1000000 strata = middle }
 		add_loyalists = { value = 1000000 strata = upper }
@@ -104,6 +104,79 @@ je_rome_final_integration_button = {
 	effect = {
 		add_modifier = { name = rome_eternal_city }
 		set_variable = { name = rome_secure_provinces_complete }
+	}
+}
+
+### 奥古斯都：吞并东方行省（初始可选阶段，直接获取埃及+黎凡特+美索不达米亚） ###
+je_rome_augustus_egypt_button = {
+	name = "je_rome_augustus_egypt_button"
+	desc = "je_rome_augustus_egypt_button_desc"
+
+	visible = {
+		NOT = { has_variable = rome_augustus_egypt_done }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		s:STATE_CYPRUS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_PALESTINE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_LEBANON = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_SYRIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_ALEPPO = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_ADANA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_TRANSJORDAN = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_BAGHDAD = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_MOSUL = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_DEIR_EZ_ZOR = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_BASRA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_LOWER_EGYPT = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_MIDDLE_EGYPT = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_UPPER_EGYPT = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_SINAI = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_EGYPTIAN_DESERT = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_MATRUH = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		set_variable = { name = rome_augustus_egypt_claimed }
+		set_variable = { name = rome_augustus_egypt_done }
+	}
+}
+
+### 奥古斯都：吞并北非（初始可选阶段，直接获取领土） ###
+je_rome_augustus_africa_button = {
+	name = "je_rome_augustus_africa_button"
+	desc = "je_rome_augustus_africa_button_desc"
+
+	visible = {
+		NOT = { has_variable = rome_augustus_africa_done }
+		NOT = { has_variable = rome_augustus_complete }
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		s:STATE_TRIPOLI = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_TUNISIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_ALGIERS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_CONSTANTINE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_ORAN = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_FEZ = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_MARRAKECH = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_AL_RIF = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_LIBYA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		s:STATE_INNER_MOROCCO = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+		set_variable = { name = rome_augustus_africa_claimed }
+		set_variable = { name = rome_augustus_africa_done }
 	}
 }
 
@@ -137,8 +210,7 @@ je_rome_augustus_hispania_button = {
 	desc = "je_rome_augustus_hispania_button_desc"
 
 	visible = {
-		has_variable = rome_augustus_italy_claimed
-		rome_italia_held = yes
+		has_variable = rome_augustus_italy_done
 		NOT = { has_variable = rome_augustus_hispania_claimed }
 		NOT = { has_variable = rome_augustus_complete }
 	}
@@ -163,8 +235,7 @@ je_rome_augustus_danube_button = {
 	desc = "je_rome_augustus_danube_button_desc"
 
 	visible = {
-		has_variable = rome_augustus_hispania_claimed
-		rome_hispania_held = yes
+		has_variable = rome_augustus_hispania_done
 		NOT = { has_variable = rome_augustus_danube_claimed }
 		NOT = { has_variable = rome_augustus_complete }
 	}
@@ -189,8 +260,7 @@ je_rome_augustus_gallia_button = {
 	desc = "je_rome_augustus_gallia_button_desc"
 
 	visible = {
-		has_variable = rome_augustus_danube_claimed
-		rome_danube_held = yes
+		has_variable = rome_augustus_danube_done
 		NOT = { has_variable = rome_augustus_gallia_claimed }
 		NOT = { has_variable = rome_augustus_complete }
 	}
@@ -215,8 +285,7 @@ je_rome_augustus_britannia_button = {
 	desc = "je_rome_augustus_britannia_button_desc"
 
 	visible = {
-		has_variable = rome_augustus_gallia_claimed
-		rome_gallia_held = yes
+		has_variable = rome_augustus_gallia_done
 		NOT = { has_variable = rome_augustus_britannia_claimed }
 		NOT = { has_variable = rome_augustus_complete }
 	}
@@ -241,8 +310,7 @@ je_rome_augustus_final_button = {
 	desc = "je_rome_augustus_final_button_desc"
 
 	visible = {
-		has_variable = rome_augustus_britannia_claimed
-		rome_britannia_held = yes
+		has_variable = rome_augustus_britannia_done
 		NOT = { has_variable = rome_augustus_complete }
 	}
 
@@ -254,7 +322,9 @@ je_rome_augustus_final_button = {
 	}
 
 	effect = {
-		add_modifier = { name = rome_augustus }
+		# 移除重建中的罗马各等级（保留条条大路通罗马），授予永恒罗马
+		rome_remove_all_rebuilding_modifiers = yes
+		add_modifier = { name = rome_imperium_aeternum }
 		set_variable = { name = rome_augustus_complete }
 	}
 }
@@ -374,5 +444,173 @@ je_rome_greek_awakening_loyalists_button = {
 		add_loyalists = { value = 500000 strata = lower }
 		add_loyalists = { value = 500000 strata = middle }
 		add_loyalists = { value = 500000 strata = upper }
+	}
+}
+
+### 我们的海：辅助脱困 - 直接获取当前奥古斯都阶段所需地块 ###
+je_rome_mare_nostrum_button = {
+	name = "je_rome_mare_nostrum_button"
+	desc = "je_rome_mare_nostrum_button_desc"
+
+	visible = {
+		NOT = { has_variable = rome_augustus_complete }
+		OR = {
+			AND = {
+				has_variable = rome_augustus_italy_claimed
+				NOT = { has_variable = rome_augustus_italy_done }
+			}
+			AND = {
+				has_variable = rome_augustus_hispania_claimed
+				NOT = { has_variable = rome_augustus_hispania_done }
+			}
+			AND = {
+				has_variable = rome_augustus_danube_claimed
+				NOT = { has_variable = rome_augustus_danube_done }
+			}
+			AND = {
+				has_variable = rome_augustus_gallia_claimed
+				NOT = { has_variable = rome_augustus_gallia_done }
+			}
+			AND = {
+				has_variable = rome_augustus_britannia_claimed
+				NOT = { has_variable = rome_augustus_britannia_done }
+			}
+		}
+	}
+
+	possible = {
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		# 阶段1：意大利（已宣称但未征服）
+		if = {
+			limit = {
+				has_variable = rome_augustus_italy_claimed
+				NOT = { has_variable = rome_augustus_italy_done }
+			}
+			s:STATE_LAZIO = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_UMBRIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_TUSCANY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ROMAGNA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_EMILIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_VENETIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_LOMBARDY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_PIEDMONT = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_SAVOY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ABRUZZO = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_CAMPANIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_APULIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_CALABRIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_SICILY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_SARDINIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_CORSICA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_MALTA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			set_variable = { name = rome_augustus_italy_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段2：伊比利亚
+		else_if = {
+			limit = {
+				has_variable = rome_augustus_hispania_claimed
+				NOT = { has_variable = rome_augustus_hispania_done }
+			}
+			s:STATE_CATALONIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ARAGON = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_VALENCIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BASQUE_COUNTRY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_OLD_CASTILE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_NEW_CASTILE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_LEON = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ASTURIAS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_GALICIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_EXTREMADURA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_MURCIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_LOWER_ANDALUSIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_UPPER_ANDALUSIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BALEARIC_ISLANDS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BEIRA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ESTREMADURA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ALENTEJO = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ENTRE_DOURO_E_MINHO = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			set_variable = { name = rome_augustus_hispania_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段3：莱茵-多瑙
+		else_if = {
+			limit = {
+				has_variable = rome_augustus_danube_claimed
+				NOT = { has_variable = rome_augustus_danube_done }
+			}
+			s:STATE_RHINELAND = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_TYROL = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_EAST_SWITZERLAND = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_WEST_SWITZERLAND = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_AUSTRIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_TRANSDANUBIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BANAT = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_NORTHERN_TRANSYLVANIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_SOUTHERN_TRANSYLVANIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_WALLACHIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_MOLDAVIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BUKOVINA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_SOUTH_TYROL = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_STYRIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_DELVIDEK = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_CENTRAL_HUNGARY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BEKES = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BESSARABIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BADEN = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_WURTTEMBERG = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			set_variable = { name = rome_augustus_danube_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段4：高卢
+		else_if = {
+			limit = {
+				has_variable = rome_augustus_gallia_claimed
+				NOT = { has_variable = rome_augustus_gallia_done }
+			}
+			s:STATE_ILE_DE_FRANCE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_PROVENCE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_NORMANDY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_LANGUEDOC = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_RHONE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_FRENCH_LOW_COUNTRIES = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_PICARDY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_POITOU = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_GUYENNE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_AQUITAINE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_AUVERGNE_LIMOUSIN = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BRITTANY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_MAINE_ANJOU = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_BURGUNDY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_CHAMPAGNE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_FRANCHE_COMTE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ORLEANS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_ALSACE_LORRAINE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_LORRAINE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			set_variable = { name = rome_augustus_gallia_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段5：不列颠尼亚
+		else_if = {
+			limit = {
+				has_variable = rome_augustus_britannia_claimed
+				NOT = { has_variable = rome_augustus_britannia_done }
+			}
+			s:STATE_HOME_COUNTIES = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_LANCASHIRE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_WALES = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_YORKSHIRE = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_MIDLANDS = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_EAST_ANGLIA = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			s:STATE_WEST_COUNTRY = { every_scope_state = { set_state_owner = root  set_state_type = incorporated } }
+			set_variable = { name = rome_augustus_britannia_done }
+			rome_update_rebuilding_modifier = yes
+		}
 	}
 }

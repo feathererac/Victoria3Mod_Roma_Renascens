@@ -22,15 +22,13 @@ je_rome_declare_imperium = {
 		}
 	}
 
-	# 点击按钮后并不消失，而是成为持续重建日志；只有当全部罗马疆域都掌握在手时才完成
+	# 点击按钮后立即完成消失（变身罗马功能在 scripted_effect 里实现）
 	complete = {
-		hidden_trigger = { rome_all_held = yes }
+		hidden_trigger = { has_variable = rome_roman_redeclared_complete }
 	}
 
-	# 完成（全部疆域到手）：移除重建中的罗马各等级与条条大路通罗马，授予永恒罗马
+	# 变身罗马后不再需要 on_complete 逻辑，buff 管理已转移到奥古斯都
 	on_complete = {
-		rome_remove_all_rebuilding_modifiers = yes
-		add_modifier = { name = rome_imperium_aeternum }
 	}
 
 	# 按钮：宣布重建罗马（一次性，点击后按钮因 rome_roman_redeclared_complete 变量而隐藏，日志保留）
@@ -105,6 +103,67 @@ je_rome_augustus = {
 		hidden_trigger = { has_variable = rome_augustus_complete }
 	}
 
+	# 动态状态描述：悬停时可高亮对应地理区域
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_rome_augustus_status_egypt
+				trigger = { NOT = { has_variable = rome_augustus_egypt_done } }
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_africa
+				trigger = { NOT = { has_variable = rome_augustus_africa_done } }
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_italy
+				trigger = { NOT = { has_variable = rome_augustus_italy_claimed } }
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_conquer_italy
+				trigger = {
+					has_variable = rome_augustus_italy_claimed
+					NOT = { has_variable = rome_augustus_italy_done }
+				}
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_conquer_hispania
+				trigger = {
+					has_variable = rome_augustus_hispania_claimed
+					NOT = { has_variable = rome_augustus_hispania_done }
+				}
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_conquer_danube
+				trigger = {
+					has_variable = rome_augustus_danube_claimed
+					NOT = { has_variable = rome_augustus_danube_done }
+				}
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_conquer_gallia
+				trigger = {
+					has_variable = rome_augustus_gallia_claimed
+					NOT = { has_variable = rome_augustus_gallia_done }
+				}
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_conquer_britannia
+				trigger = {
+					has_variable = rome_augustus_britannia_claimed
+					NOT = { has_variable = rome_augustus_britannia_done }
+				}
+			}
+			triggered_desc = {
+				desc = je_rome_augustus_status_final
+				trigger = {
+					has_variable = rome_augustus_britannia_done
+				}
+			}
+		}
+	}
+
+	scripted_button = je_rome_augustus_egypt_button
+	scripted_button = je_rome_augustus_africa_button
 	scripted_button = je_rome_augustus_italy_button
 	scripted_button = je_rome_augustus_hispania_button
 	scripted_button = je_rome_augustus_danube_button
@@ -163,7 +222,7 @@ je_rome_senate = {
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
 
-### 我们的海 - 占位符（功能开发中） ###
+### 我们的海 - 辅助脱困：直接获取当前奥古斯都阶段所需地块 ###
 je_rome_mare_nostrum = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
@@ -174,6 +233,30 @@ je_rome_mare_nostrum = {
 			c:BYZ ?= this
 			c:SPQR ?= this
 		}
+		NOT = { has_variable = rome_augustus_complete }
+		# 仅当存在已宣称但未征服的阶段时显示
+		OR = {
+			AND = {
+				has_variable = rome_augustus_italy_claimed
+				NOT = { has_variable = rome_augustus_italy_done }
+			}
+			AND = {
+				has_variable = rome_augustus_hispania_claimed
+				NOT = { has_variable = rome_augustus_hispania_done }
+			}
+			AND = {
+				has_variable = rome_augustus_danube_claimed
+				NOT = { has_variable = rome_augustus_danube_done }
+			}
+			AND = {
+				has_variable = rome_augustus_gallia_claimed
+				NOT = { has_variable = rome_augustus_gallia_done }
+			}
+			AND = {
+				has_variable = rome_augustus_britannia_claimed
+				NOT = { has_variable = rome_augustus_britannia_done }
+			}
+		}
 	}
 
 	possible = {
@@ -182,6 +265,8 @@ je_rome_mare_nostrum = {
 			c:SPQR ?= this
 		}
 	}
+
+	scripted_button = je_rome_mare_nostrum_button
 
 	weight = 100
 

@@ -10,6 +10,7 @@ on_monthly_pulse_country = {
 		rome_ig_rename_check
 		rome_rebuilding_check
 		rome_pro_army_check
+		rome_augustus_progress_check
 	}
 }
 
@@ -90,6 +91,86 @@ rome_ig_ideology_check = {
 			ig:ig_trade_unions ?= { add_ideology = ideology_rome_collegia }
 			ig:ig_rural_folk ?= { add_ideology = ideology_rome_plebs_rustica }
 			ig:ig_petty_bourgeoisie ?= { add_ideology = ideology_rome_plebs_urbana }
+		}
+	}
+}
+
+# 每月脉冲：奥古斯都阶段进度检测
+# 检测每个阶段的地块是否已全部掌握，若是则设置永久变量 _done，使下一阶段按钮 visible
+# visible 只检查变量（永久条件），不检查瞬态地块条件，避免按钮静默消失
+rome_augustus_progress_check = {
+	trigger = {
+		OR = {
+			c:BYZ ?= this
+			c:SPQR ?= this
+		}
+	}
+	effect = {
+		# 阶段1：意大利已征服
+		if = {
+			limit = {
+				has_variable = rome_augustus_italy_claimed
+				rome_italia_held = yes
+				NOT = { has_variable = rome_augustus_italy_done }
+			}
+			set_variable = { name = rome_augustus_italy_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段2：伊比利亚已征服
+		if = {
+			limit = {
+				has_variable = rome_augustus_hispania_claimed
+				rome_hispania_held = yes
+				NOT = { has_variable = rome_augustus_hispania_done }
+			}
+			set_variable = { name = rome_augustus_hispania_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段3：多瑙河已征服
+		if = {
+			limit = {
+				has_variable = rome_augustus_danube_claimed
+				rome_danube_held = yes
+				NOT = { has_variable = rome_augustus_danube_done }
+			}
+			set_variable = { name = rome_augustus_danube_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段4：高卢已征服
+		if = {
+			limit = {
+				has_variable = rome_augustus_gallia_claimed
+				rome_gallia_held = yes
+				NOT = { has_variable = rome_augustus_gallia_done }
+			}
+			set_variable = { name = rome_augustus_gallia_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 阶段5：不列颠已征服
+		if = {
+			limit = {
+				has_variable = rome_augustus_britannia_claimed
+				rome_britannia_held = yes
+				NOT = { has_variable = rome_augustus_britannia_done }
+			}
+			set_variable = { name = rome_augustus_britannia_done }
+			rome_update_rebuilding_modifier = yes
+		}
+		# 东方行省已征服（可选阶段，不参与线性推进，无论是否通过按钮）
+		if = {
+			limit = {
+				rome_east_held = yes
+				NOT = { has_variable = rome_augustus_egypt_done }
+			}
+			set_variable = { name = rome_augustus_egypt_done }
+		}
+		# 北非已征服（可选阶段，不参与线性推进，无论是否通过按钮）
+		if = {
+			limit = {
+				rome_africa_held = yes
+				NOT = { has_variable = rome_augustus_africa_done }
+			}
+			set_variable = { name = rome_augustus_africa_done }
 		}
 	}
 }

@@ -494,19 +494,161 @@ rome_integrate_roman_states = {
 	set_state_type = incorporated
 }
 
-### 消除国家内所有激进派 ###
-rome_eliminate_radicals = {
-	# 对所有阶层、所有文化扣除大量激进派以清零
+### 减少国家内30%激进派（value为占人口比例，参考原版 very_small=0.01 ~ huge=0.3） ###
+rome_reduce_radicals = {
+	# 对所有阶层、所有文化扣除相当于其人口30%的激进派（负值在现有激进派数量处封顶）
 	add_radicals = {
-		value = -1000000
+		value = -0.3
 		strata = lower
 	}
 	add_radicals = {
-		value = -1000000
+		value = -0.3
 		strata = middle
 	}
 	add_radicals = {
-		value = -1000000
+		value = -0.3
 		strata = upper
+	}
+}
+
+### 「我们的海」辅助脱困：直接授予当前奥古斯都阶段所需地块 ###
+### 检测当前阶段并授予对应地区全部州区域 ###
+
+rome_grant_italia_states = {
+	s:STATE_LAZIO = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_UMBRIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_TUSCANY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ROMAGNA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_EMILIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_VENETIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_LOMBARDY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_PIEDMONT = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_SAVOY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ABRUZZO = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_CAMPANIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_APULIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_CALABRIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_SICILY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_SARDINIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_CORSICA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_MALTA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+}
+
+rome_grant_hispania_states = {
+	s:STATE_CATALONIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ARAGON = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_VALENCIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BASQUE_COUNTRY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_OLD_CASTILE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_NEW_CASTILE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_LEON = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ASTURIAS = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_GALICIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_EXTREMADURA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_MURCIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_LOWER_ANDALUSIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_UPPER_ANDALUSIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BALEARIC_ISLANDS = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BEIRA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ESTREMADURA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ALENTEJO = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ENTRE_DOURO_E_MINHO = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+}
+
+rome_grant_danube_states = {
+	s:STATE_RHINELAND = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_TYROL = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_EAST_SWITZERLAND = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_WEST_SWITZERLAND = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_AUSTRIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_TRANSDANUBIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BANAT = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_NORTHERN_TRANSYLVANIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_SOUTHERN_TRANSYLVANIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_WALLACHIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_MOLDAVIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BUKOVINA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_SOUTH_TYROL = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_STYRIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_DELVIDEK = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_CENTRAL_HUNGARY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BEKES = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BESSARABIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BADEN = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_WURTTEMBERG = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+}
+
+rome_grant_gallia_states = {
+	s:STATE_ILE_DE_FRANCE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_PROVENCE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_NORMANDY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_LANGUEDOC = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_RHONE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_FRENCH_LOW_COUNTRIES = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_PICARDY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_POITOU = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_GUYENNE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_AQUITAINE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_AUVERGNE_LIMOUSIN = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BRITTANY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_MAINE_ANJOU = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_BURGUNDY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_CHAMPAGNE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_FRANCHE_COMTE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ORLEANS = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_ALSACE_LORRAINE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_LORRAINE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+}
+
+rome_grant_britannia_states = {
+	s:STATE_HOME_COUNTIES = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_LANCASHIRE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_WALES = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_YORKSHIRE = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_MIDLANDS = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_EAST_ANGLIA = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+	s:STATE_WEST_COUNTRY = { every_scope_state = { set_state_owner = root set_state_type = incorporated } }
+}
+
+### 检测当前奥古斯都阶段并授予对应地块（按钮调用） ###
+rome_grant_current_augustus_stage = {
+	if = {
+		limit = {
+			has_variable = rome_augustus_italy_claimed
+			NOT = { rome_italia_held = yes }
+			NOT = { has_variable = rome_augustus_hispania_claimed }
+		}
+		rome_grant_italia_states = yes
+	}
+	else_if = {
+		limit = {
+			has_variable = rome_augustus_hispania_claimed
+			NOT = { rome_hispania_held = yes }
+			NOT = { has_variable = rome_augustus_danube_claimed }
+		}
+		rome_grant_hispania_states = yes
+	}
+	else_if = {
+		limit = {
+			has_variable = rome_augustus_danube_claimed
+			NOT = { rome_danube_held = yes }
+			NOT = { has_variable = rome_augustus_gallia_claimed }
+		}
+		rome_grant_danube_states = yes
+	}
+	else_if = {
+		limit = {
+			has_variable = rome_augustus_gallia_claimed
+			NOT = { rome_gallia_held = yes }
+			NOT = { has_variable = rome_augustus_britannia_claimed }
+		}
+		rome_grant_gallia_states = yes
+	}
+	else_if = {
+		limit = {
+			has_variable = rome_augustus_britannia_claimed
+			NOT = { rome_britannia_held = yes }
+		}
+		rome_grant_britannia_states = yes
 	}
 }

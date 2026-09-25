@@ -59,6 +59,7 @@ rome_east_held = {
     owns_entire_state_region = s:STATE_LEBANON          # Syria Phoenice
     owns_entire_state_region = s:STATE_SYRIA            # Syria/安条克
     owns_entire_state_region = s:STATE_ALEPPO
+    owns_entire_state_region = s:STATE_ADANA            # Cilicia/阿达纳
     owns_entire_state_region = s:STATE_TRANSJORDAN      # Arabia Petraea
     owns_entire_state_region = s:STATE_BAGHDAD          # Mesopotamia
     owns_entire_state_region = s:STATE_MOSUL            # Assyria
@@ -84,6 +85,16 @@ rome_africa_held = {
     owns_entire_state_region = s:STATE_AL_RIF
     owns_entire_state_region = s:STATE_LIBYA
     owns_entire_state_region = s:STATE_INNER_MOROCCO
+}
+
+### T3b 埃及（从东方行省分离，用于奥古斯都独立阶段） ###
+rome_egypt_held = {
+    owns_entire_state_region = s:STATE_LOWER_EGYPT      # Aegyptus
+    owns_entire_state_region = s:STATE_MIDDLE_EGYPT
+    owns_entire_state_region = s:STATE_UPPER_EGYPT      # Thebais
+    owns_entire_state_region = s:STATE_SINAI
+    owns_entire_state_region = s:STATE_EGYPTIAN_DESERT
+    owns_entire_state_region = s:STATE_MATRUH
 }
 
 ### T4 意大利本土 ###
